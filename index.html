@@ -23,11 +23,17 @@
       --text-sub: #57534e;
       --text-muted: #78716c;
       --border-soft: #e7e5e4;
-      --shadow-card: 0 10px 25px -5px rgba(28,25,23,0.06), 0 8px 10px -6px rgba(28,25,23,0.04);
+      --shadow-card: 0 10px 25px -5px rgba(28, 25, 23, 0.06), 0 8px 10px -6px rgba(28, 25, 23, 0.04);
       --radius-lg: 16px;
       --radius-md: 12px;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
       background-color: var(--bg-page);
@@ -36,172 +42,893 @@
       -webkit-font-smoothing: antialiased;
       padding-bottom: 84px;
     }
-    .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Top Special Offer Banner */
     .top-offer-banner {
       background: linear-gradient(90deg, var(--brand-primary-dark), var(--brand-primary));
-      color: #fff; text-align: center; padding: 9px 14px; font-size: 13px; font-weight: 800;
+      color: #fff;
+      text-align: center;
+      padding: 9px 14px;
+      font-size: 13px;
+      font-weight: 800;
     }
     .top-offer-banner span.free-tag {
-      background: #fbbf24; color: #1c1917; padding: 2px 8px; border-radius: 4px; margin-right: 6px; font-size: 12px;
+      background: #fbbf24;
+      color: #1c1917;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-right: 6px;
+      font-size: 12px;
     }
+
+    /* Header */
     .site-header {
-      background: rgba(255,255,255,0.96); backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border-soft); padding: 14px 0; position: sticky; top: 0; z-index: 950;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-soft);
+      padding: 14px 0;
+      position: sticky;
+      top: 0;
+      z-index: 950;
     }
-    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-    .brand-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text-main); }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
     .brand-icon {
-      width: 42px; height: 42px; border-radius: 12px;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
       background: linear-gradient(135deg, var(--brand-primary), var(--brand-primary-dark));
-      color: #fff; display: flex; align-items: center; justify-content: center;
-      font-weight: 900; font-size: 20px; flex-shrink: 0; box-shadow: 0 4px 10px rgba(15,118,110,0.25);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 20px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(15, 118, 110, 0.25);
     }
-    .brand-title { font-size: 22px; font-weight: 900; color: var(--brand-primary-dark); line-height: 1.15; }
-    .brand-sub { font-size: 11px; color: var(--text-sub); display: block; font-weight: 600; margin-top: 2px; }
-    .header-right { display: flex; align-items: center; gap: 10px; }
-    .header-hours { font-size: 11px; color: var(--text-sub); text-align: right; display: none; line-height: 1.35; }
-    @media (min-width: 760px) { .header-hours { display: block; } }
+    .brand-title {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      color: var(--brand-primary-dark);
+      line-height: 1.15;
+    }
+    .brand-sub {
+      font-size: 11px;
+      color: var(--text-sub);
+      display: block;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .header-hours {
+      font-size: 11px;
+      color: var(--text-sub);
+      text-align: right;
+      display: none;
+      line-height: 1.35;
+    }
+    @media (min-width: 760px) {
+      .header-hours {
+        display: block;
+      }
+    }
     .header-line-btn {
-      background: var(--line-green); color: #fff; text-decoration: none; font-weight: 800;
-      font-size: 12.5px; padding: 9px 14px; border-radius: 999px; white-space: nowrap;
+      background: var(--line-green);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 12.5px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      white-space: nowrap;
     }
     .header-cta {
-      background: var(--brand-accent); color: #fff; text-decoration: none; font-weight: 800;
-      font-size: 12.5px; padding: 9px 16px; border-radius: 999px; white-space: nowrap;
+      background: var(--brand-accent);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 12.5px;
+      padding: 9px 16px;
+      border-radius: 999px;
+      transition: background 0.2s;
+      white-space: nowrap;
     }
+    .header-cta:hover {
+      background: var(--brand-accent-hover);
+    }
+
+    /* Hero Section */
     .hero {
       padding: 36px 0 52px;
       background: radial-gradient(circle at top right, var(--brand-primary-light), transparent 65%);
       border-bottom: 1px solid var(--border-soft);
     }
-    .hero-grid { display: grid; grid-template-columns: 1fr; gap: 28px; align-items: center; }
-    @media (min-width: 820px) { .hero-grid { grid-template-columns: 1.15fr 0.85fr; gap: 36px; } }
-    .support-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
-    .pill-primary { background: var(--brand-primary); color: #fff; font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 999px; }
-    .pill-outline { background: #fff; color: var(--brand-primary-dark); border: 1.5px solid var(--brand-primary); font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 999px; }
-    .hero h1 { font-size: clamp(24px, 4.2vw, 35px); font-weight: 900; line-height: 1.38; margin-bottom: 14px; }
-    .hero h1 .highlight { color: var(--brand-primary); background: linear-gradient(transparent 65%, var(--brand-primary-border) 65%); padding: 0 2px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+    @media (min-width: 820px) {
+      .hero-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 36px;
+      }
+    }
+    .support-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .pill-primary {
+      background: var(--brand-primary);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 999px;
+    }
+    .pill-outline {
+      background: #fff;
+      color: var(--brand-primary-dark);
+      border: 1.5px solid var(--brand-primary);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+    .hero h1 {
+      font-size: clamp(24px, 4.2vw, 35px);
+      font-weight: 900;
+      line-height: 1.38;
+      letter-spacing: -0.01em;
+      margin-bottom: 14px;
+      color: var(--text-main);
+    }
+    .hero h1 .highlight {
+      color: var(--brand-primary);
+      background: linear-gradient(transparent 65%, var(--brand-primary-border) 65%);
+      padding: 0 2px;
+    }
     .free-first-box {
-      background: var(--brand-accent-light); border: 2px solid var(--brand-accent);
-      border-radius: var(--radius-md); padding: 14px 18px; margin-bottom: 18px; display: flex; align-items: center; gap: 12px;
+      background: var(--brand-accent-light);
+      border: 2px solid var(--brand-accent);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
     .free-badge-circle {
-      background: var(--brand-accent); color: #fff; font-weight: 900; font-size: 13px;
-      padding: 8px 10px; border-radius: 10px; text-align: center; line-height: 1.2; flex-shrink: 0;
+      background: var(--brand-accent);
+      color: #fff;
+      font-weight: 900;
+      font-size: 13px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      text-align: center;
+      line-height: 1.2;
+      flex-shrink: 0;
     }
-    .free-first-box strong { display: block; font-size: 16px; color: #92400e; font-weight: 900; }
-    .free-first-box span { font-size: 12.5px; color: var(--text-sub); }
-    .hero-lead { font-size: 15px; color: var(--text-sub); margin-bottom: 18px; }
+    .free-first-box strong {
+      display: block;
+      font-size: 16px;
+      color: #92400e;
+      font-weight: 900;
+    }
+    .free-first-box span {
+      font-size: 12.5px;
+      color: var(--text-sub);
+    }
+
+    .hero-lead {
+      font-size: 15px;
+      color: var(--text-sub);
+      margin-bottom: 18px;
+    }
     .hero-points {
-      list-style: none; display: grid; gap: 8px; margin-bottom: 24px; background: #fff;
-      padding: 14px 18px; border-radius: var(--radius-md); border: 1px solid var(--border-soft);
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      margin-bottom: 24px;
+      background: #fff;
+      padding: 14px 18px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-soft);
     }
-    .hero-points li { font-size: 13.5px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+    .hero-points li {
+      font-size: 13.5px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
     .check-badge {
-      width: 20px; height: 20px; border-radius: 50%; background: var(--brand-primary-light);
-      color: var(--brand-primary); display: inline-flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--brand-primary-light);
+      color: var(--brand-primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      flex-shrink: 0;
     }
-    .cta-box { display: flex; flex-direction: column; gap: 10px; }
-    @media (min-width: 520px) { .cta-box { flex-direction: row; } }
-    .btn-main, .btn-line, .btn-sub {
-      display: inline-flex; align-items: center; justify-content: center; font-weight: 800;
-      border-radius: var(--radius-md); text-decoration: none; cursor: pointer; transition: transform 0.15s, background 0.2s;
+    .cta-box {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
-    .btn-main { background: var(--brand-accent); color: #fff; font-size: 15.5px; padding: 15px 22px; border: none; box-shadow: 0 6px 16px rgba(217,119,6,0.25); }
-    .btn-line { background: var(--line-green); color: #fff; font-size: 15.5px; padding: 15px 22px; border: none; box-shadow: 0 6px 16px rgba(6,199,85,0.25); }
-    .btn-sub { background: #fff; color: var(--brand-primary-dark); border: 2px solid var(--brand-primary); font-size: 14px; padding: 13px 20px; }
-    .hero-visual-card { background: #fff; border-radius: var(--radius-lg); padding: 20px; box-shadow: var(--shadow-card); border: 1px solid var(--border-soft); }
-    .miraine-concept-box { background: var(--brand-primary-light); border-radius: var(--radius-md); padding: 18px 14px; text-align: center; margin-bottom: 14px; border: 1px solid var(--brand-primary-border); }
-    .miraine-steps { display: flex; justify-content: space-between; align-items: center; gap: 6px; margin: 12px 0; }
-    .step-bubble { flex: 1; background: #fff; border: 2px solid var(--brand-primary-border); border-radius: 12px; padding: 10px 6px; text-align: center; }
-    .step-bubble strong { display: block; font-size: 12px; color: var(--brand-primary-dark); margin-top: 4px; }
-    .step-bubble span { font-size: 10px; color: var(--text-sub); }
-    .hybrid-banner { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
-    .hybrid-item { background: var(--bg-page); padding: 10px 12px; border-radius: 10px; border: 1px solid var(--border-soft); text-align: left; }
-    .hybrid-item strong { display: block; font-size: 12.5px; color: var(--brand-primary-dark); margin-bottom: 2px; }
-    .hybrid-item span { font-size: 11px; color: var(--text-sub); display: block; line-height: 1.4; }
-    .hours-mini-box { background: var(--bg-page); border-radius: 10px; padding: 10px 14px; font-size: 12px; border: 1px solid var(--border-soft); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px; }
-    section { padding: 56px 0; }
-    .section-header { text-align: center; margin-bottom: 32px; }
-    .section-eyebrow { color: var(--brand-primary); font-size: 12px; font-weight: 800; letter-spacing: 0.08em; display: block; margin-bottom: 6px; }
-    .section-title { font-size: clamp(21px, 3.2vw, 28px); font-weight: 800; line-height: 1.35; }
-    .section-desc { font-size: 14px; color: var(--text-sub); margin-top: 8px; }
-    .ai-showcase-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
-    @media (min-width: 720px) { .ai-showcase-grid { grid-template-columns: repeat(2, 1fr); } }
-    .ai-card { background: #fff; border-radius: var(--radius-lg); padding: 22px 20px; border: 1px solid var(--border-soft); box-shadow: var(--shadow-card); display: flex; gap: 14px; align-items: flex-start; }
-    .ai-icon-box { width: 48px; height: 48px; border-radius: 12px; background: var(--brand-primary-light); border: 1px solid var(--brand-primary-border); display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; }
-    .ai-card h3 { font-size: 16px; font-weight: 800; color: var(--brand-primary-dark); margin-bottom: 4px; }
-    .ai-card p { font-size: 13.5px; color: var(--text-sub); }
-    .ai-time-badge { display: inline-block; background: var(--brand-accent-light); color: #92400e; border: 1px solid var(--brand-accent-border); font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 999px; margin-bottom: 6px; }
-    .target-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 680px; margin: 0 auto 24px; }
-    .target-tab-btn { padding: 14px 12px; border-radius: var(--radius-md); border: 2px solid var(--border-soft); background: #fff; color: var(--text-sub); font-weight: 800; font-size: 14px; cursor: pointer; text-align: center; }
-    .target-tab-btn.active { border-color: var(--brand-primary); background: var(--brand-primary); color: #fff; }
-    .target-panel { display: none; background: #fff; border-radius: var(--radius-lg); padding: 28px 24px; border: 1px solid var(--border-soft); box-shadow: var(--shadow-card); }
-    .target-panel.active { display: block; }
-    .pain-grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin-bottom: 22px; }
-    @media (min-width: 700px) { .pain-grid { grid-template-columns: 1fr 1fr; } }
-    .pain-card { background: var(--bg-page); border-left: 4px solid var(--brand-accent); padding: 14px 16px; border-radius: 8px; font-size: 14px; font-weight: 600; }
-    .solution-banner { background: var(--brand-primary-light); border: 1px solid var(--brand-primary-border); padding: 18px 20px; border-radius: var(--radius-md); display: flex; flex-direction: column; gap: 8px; }
-    .solution-banner h4 { color: var(--brand-primary-dark); font-size: 16px; font-weight: 800; }
-    .service-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
-    .service-tag { background: #fff; color: var(--brand-primary-dark); border: 1px solid var(--brand-primary-border); padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 700; }
-    .sim-card { background: #fff; border-radius: var(--radius-lg); padding: 28px 22px; border: 2px solid var(--brand-primary); box-shadow: var(--shadow-card); max-width: 820px; margin: 0 auto 40px; }
-    .sim-step-group { display: grid; grid-template-columns: 1fr; gap: 16px; margin-bottom: 22px; }
-    @media (min-width: 700px) { .sim-step-group { grid-template-columns: repeat(3, 1fr); } }
-    .sim-field label { display: block; font-size: 12px; font-weight: 800; color: var(--brand-primary-dark); margin-bottom: 6px; }
-    .sim-select { width: 100%; padding: 11px 12px; border-radius: 8px; border: 1.5px solid var(--border-soft); font-size: 14px; font-weight: 600; background: var(--bg-page); }
-    .sim-result { background: var(--brand-primary-light); border: 1px solid var(--brand-primary-border); border-radius: var(--radius-md); padding: 20px; display: flex; flex-direction: column; gap: 10px; }
-    @media (min-width: 640px) { .sim-result { flex-direction: row; align-items: center; justify-content: space-between; } }
-    .sim-plan-name { font-size: 18px; font-weight: 800; color: var(--brand-primary-dark); }
-    .sim-price { font-size: 26px; font-weight: 900; color: var(--brand-accent); }
-    .sim-price small { font-size: 13px; color: var(--text-sub); font-weight: 600; }
-    .pricing-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
-    @media (min-width: 820px) { .pricing-grid { grid-template-columns: repeat(3, 1fr); } }
-    .price-card { background: #fff; border-radius: var(--radius-lg); padding: 26px 20px; border: 1px solid var(--border-soft); box-shadow: var(--shadow-card); display: flex; flex-direction: column; justify-content: space-between; }
-    .price-card.featured { border: 2.5px solid var(--brand-primary); position: relative; }
-    .popular-ribbon { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--brand-accent); color: #fff; font-size: 11px; font-weight: 800; padding: 3px 14px; border-radius: 999px; white-space: nowrap; }
-    .price-card h3 { font-size: 18px; font-weight: 800; color: var(--brand-primary-dark); margin-bottom: 4px; }
-    .price-target { font-size: 12px; color: var(--text-muted); margin-bottom: 14px; }
-    .price-amount { font-size: 27px; font-weight: 900; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid var(--border-soft); }
-    .price-amount span { font-size: 13px; font-weight: 600; color: var(--text-sub); }
-    .price-features { list-style: none; display: grid; gap: 8px; font-size: 13.5px; color: var(--text-sub); margin-bottom: 20px; }
-    .info-split-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
-    @media (min-width: 780px) { .info-split-grid { grid-template-columns: 1.08fr 0.92fr; } }
-    .profile-card, .schedule-card { background: #fff; border-radius: var(--radius-lg); padding: 26px 22px; border: 1px solid var(--border-soft); box-shadow: var(--shadow-card); }
-    .profile-head { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
-    .profile-avatar { width: 60px; height: 60px; border-radius: 50%; background: var(--brand-primary-light); border: 2px solid var(--brand-primary); display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; }
-    .schedule-table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 13.5px; }
-    .schedule-table th, .schedule-table td { padding: 10px 12px; border-bottom: 1px solid var(--border-soft); text-align: left; }
-    .schedule-table th { color: var(--brand-primary-dark); font-weight: 800; width: 38%; background: var(--bg-page); }
-    .booking-hub-grid { display: grid; grid-template-columns: 1fr; gap: 24px; margin-bottom: 28px; }
-    @media (min-width: 820px) { .booking-hub-grid { grid-template-columns: 1fr 1fr; } }
-    .gcal-card { background: #fff; border-radius: var(--radius-lg); padding: 26px 22px; border: 2px solid var(--brand-primary); box-shadow: var(--shadow-card); }
-    .gcal-week-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin: 14px 0; text-align: center; }
-    .gcal-day { background: var(--bg-page); border: 1px solid var(--border-soft); border-radius: 8px; padding: 8px 4px; font-size: 11px; }
-    .gcal-day.weekend { background: var(--brand-primary-light); border-color: var(--brand-primary-border); }
-    .gcal-day strong { display: block; font-size: 12px; margin-bottom: 4px; color: var(--brand-primary-dark); }
-    .gcal-status-ok { display: inline-block; background: #dcfce7; color: #166534; font-weight: 800; padding: 2px 5px; border-radius: 4px; font-size: 10px; }
-    .line-contact-card { background: #f0fdf4; border-radius: var(--radius-lg); padding: 26px 22px; border: 2px solid var(--line-green); box-shadow: var(--shadow-card); display: flex; flex-direction: column; justify-content: space-between; }
-    .contact-card { background: #fff; border-radius: var(--radius-lg); padding: 32px 24px; border: 1px solid var(--border-soft); box-shadow: var(--shadow-card); max-width: 860px; margin: 0 auto; }
-    .calendar-slots { display: grid; grid-template-columns: repeat(auto-fit, minmax(135px, 1fr)); gap: 8px; margin-top: 6px; }
-    .slot-chip { border: 1.5px solid var(--border-soft); background: var(--bg-page); padding: 9px 10px; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer; text-align: center; }
-    .slot-chip.selected { background: var(--brand-primary-light); border-color: var(--brand-primary); color: var(--brand-primary-dark); }
-    .form-grid { display: grid; gap: 16px; }
-    .form-group label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; }
-    .form-control { width: 100%; padding: 12px 14px; border: 1.5px solid var(--border-soft); border-radius: 8px; font-size: 14px; font-family: inherit; }
+    @media (min-width: 520px) {
+      .cta-box {
+        flex-direction: row;
+      }
+    }
+    .btn-main {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--brand-accent);
+      color: #fff;
+      font-weight: 800;
+      font-size: 15.5px;
+      padding: 15px 22px;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      box-shadow: 0 6px 16px rgba(217, 119, 6, 0.25);
+      transition: transform 0.15s, background 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-main:hover {
+      background: var(--brand-accent-hover);
+      transform: translateY(-1px);
+    }
+    .btn-line {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--line-green);
+      color: #fff;
+      font-weight: 800;
+      font-size: 15.5px;
+      padding: 15px 22px;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      box-shadow: 0 6px 16px rgba(6, 199, 85, 0.25);
+      transition: transform 0.15s, background 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-line:hover {
+      background: var(--line-green-hover);
+      transform: translateY(-1px);
+    }
+    .btn-sub {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      color: var(--brand-primary-dark);
+      border: 2px solid var(--brand-primary);
+      font-weight: 700;
+      font-size: 14px;
+      padding: 13px 20px;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-sub:hover {
+      background: var(--brand-primary-light);
+    }
+
+    /* Visual Concept Card */
+    .hero-visual-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      box-shadow: var(--shadow-card);
+      border: 1px solid var(--border-soft);
+    }
+    .miraine-concept-box {
+      background: var(--brand-primary-light);
+      border-radius: var(--radius-md);
+      padding: 18px 14px;
+      text-align: center;
+      margin-bottom: 14px;
+      border: 1px solid var(--brand-primary-border);
+    }
+    .miraine-steps {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+      margin: 12px 0;
+    }
+    .step-bubble {
+      flex: 1;
+      background: #fff;
+      border: 2px solid var(--brand-primary-border);
+      border-radius: 12px;
+      padding: 10px 6px;
+      text-align: center;
+    }
+    .step-bubble strong {
+      display: block;
+      font-size: 12px;
+      color: var(--brand-primary-dark);
+      margin-top: 4px;
+    }
+    .step-bubble span {
+      font-size: 10px;
+      color: var(--text-sub);
+    }
+    .hybrid-banner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .hybrid-item {
+      background: var(--bg-page);
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border-soft);
+      text-align: left;
+    }
+    .hybrid-item strong {
+      display: block;
+      font-size: 12.5px;
+      color: var(--brand-primary-dark);
+      margin-bottom: 2px;
+    }
+    .hybrid-item span {
+      font-size: 11px;
+      color: var(--text-sub);
+      display: block;
+      line-height: 1.4;
+    }
+    .hours-mini-box {
+      background: var(--bg-page);
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 12px;
+      border: 1px solid var(--border-soft);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    /* Section Defaults */
+    section {
+      padding: 56px 0;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .section-eyebrow {
+      color: var(--brand-primary);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .section-title {
+      font-size: clamp(21px, 3.2vw, 28px);
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.35;
+    }
+    .section-desc {
+      font-size: 14px;
+      color: var(--text-sub);
+      margin-top: 8px;
+    }
+
+    /* AI Utilization Showcase Grid */
+    .ai-showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    @media (min-width: 720px) {
+      .ai-showcase-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .ai-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 22px 20px;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-card);
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .ai-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--brand-primary-light);
+      border: 1px solid var(--brand-primary-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+    .ai-card h3 {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--brand-primary-dark);
+      margin-bottom: 4px;
+    }
+    .ai-card p {
+      font-size: 13.5px;
+      color: var(--text-sub);
+    }
+    .ai-time-badge {
+      display: inline-block;
+      background: var(--brand-accent-light);
+      color: #92400e;
+      border: 1px solid var(--brand-accent-border);
+      font-size: 11px;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 999px;
+      margin-bottom: 6px;
+    }
+
+    /* Target Switching Tabs */
+    .target-tabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      max-width: 680px;
+      margin: 0 auto 24px;
+    }
+    .target-tab-btn {
+      padding: 14px 12px;
+      border-radius: var(--radius-md);
+      border: 2px solid var(--border-soft);
+      background: #fff;
+      color: var(--text-sub);
+      font-weight: 800;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+    .target-tab-btn.active {
+      border-color: var(--brand-primary);
+      background: var(--brand-primary);
+      color: #fff;
+      box-shadow: 0 6px 16px rgba(15, 118, 110, 0.2);
+    }
+    .target-panel {
+      display: none;
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-card);
+    }
+    .target-panel.active {
+      display: block;
+    }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+    @media (min-width: 700px) {
+      .pain-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .pain-card {
+      background: var(--bg-page);
+      border-left: 4px solid var(--brand-accent);
+      padding: 14px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .solution-banner {
+      background: var(--brand-primary-light);
+      border: 1px solid var(--brand-primary-border);
+      padding: 18px 20px;
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .solution-banner h4 {
+      color: var(--brand-primary-dark);
+      font-size: 16px;
+      font-weight: 800;
+    }
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+    }
+    .service-tag {
+      background: #fff;
+      color: var(--brand-primary-dark);
+      border: 1px solid var(--brand-primary-border);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    /* Interactive 30-sec Price Simulator */
+    .sim-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 28px 22px;
+      border: 2px solid var(--brand-primary);
+      box-shadow: var(--shadow-card);
+      max-width: 820px;
+      margin: 0 auto 40px;
+    }
+    .sim-step-group {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+    @media (min-width: 700px) {
+      .sim-step-group {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .sim-field label {
+      display: block;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--brand-primary-dark);
+      margin-bottom: 6px;
+    }
+    .sim-select {
+      width: 100%;
+      padding: 11px 12px;
+      border-radius: 8px;
+      border: 1.5px solid var(--border-soft);
+      font-size: 14px;
+      font-weight: 600;
+      background: var(--bg-page);
+      color: var(--text-main);
+    }
+    .sim-result {
+      background: var(--brand-primary-light);
+      border: 1px solid var(--brand-primary-border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    @media (min-width: 640px) {
+      .sim-result {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+    .sim-plan-name {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--brand-primary-dark);
+    }
+    .sim-price {
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--brand-accent);
+    }
+    .sim-price small {
+      font-size: 13px;
+      color: var(--text-sub);
+      font-weight: 600;
+    }
+
+    /* Pricing Table Cards */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    @media (min-width: 820px) {
+      .pricing-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .price-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 26px 20px;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .price-card.featured {
+      border: 2.5px solid var(--brand-primary);
+      position: relative;
+    }
+    .popular-ribbon {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--brand-accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 14px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .price-card h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--brand-primary-dark);
+      margin-bottom: 4px;
+    }
+    .price-target {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+    .price-amount {
+      font-size: 27px;
+      font-weight: 900;
+      color: var(--text-main);
+      margin-bottom: 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .price-amount span {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-sub);
+    }
+    .price-features {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      font-size: 13.5px;
+      color: var(--text-sub);
+      margin-bottom: 20px;
+    }
+
+    /* Profile & Area/Hours Section */
+    .info-split-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    @media (min-width: 780px) {
+      .info-split-grid {
+        grid-template-columns: 1.08fr 0.92fr;
+      }
+    }
+    .profile-card, .schedule-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 26px 22px;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-card);
+    }
+    .profile-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .profile-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--brand-primary-light);
+      border: 2px solid var(--brand-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 16px;
+      font-size: 13.5px;
+    }
+    .schedule-table th, .schedule-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border-soft);
+      text-align: left;
+    }
+    .schedule-table th {
+      color: var(--brand-primary-dark);
+      font-weight: 800;
+      width: 38%;
+      background: var(--bg-page);
+    }
+
+    /* Step 2 Integration: Google Calendar + LINE & Email Dual Contact */
+    .booking-hub-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+    @media (min-width: 820px) {
+      .booking-hub-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .gcal-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 26px 22px;
+      border: 2px solid var(--brand-primary);
+      box-shadow: var(--shadow-card);
+    }
+    .gcal-week-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 6px;
+      margin: 14px 0;
+      text-align: center;
+    }
+    .gcal-day {
+      background: var(--bg-page);
+      border: 1px solid var(--border-soft);
+      border-radius: 8px;
+      padding: 8px 4px;
+      font-size: 11px;
+    }
+    .gcal-day.weekend {
+      background: var(--brand-primary-light);
+      border-color: var(--brand-primary-border);
+    }
+    .gcal-day strong {
+      display: block;
+      font-size: 12px;
+      margin-bottom: 4px;
+      color: var(--brand-primary-dark);
+    }
+    .gcal-status-ok {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      font-weight: 800;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-size: 10px;
+    }
+    .line-contact-card {
+      background: #f0fdf4;
+      border-radius: var(--radius-lg);
+      padding: 26px 22px;
+      border: 2px solid var(--line-green);
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .contact-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 32px 24px;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-card);
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .calendar-slots {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .slot-chip {
+      border: 1.5px solid var(--border-soft);
+      background: var(--bg-page);
+      padding: 9px 10px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.15s;
+    }
+    .slot-chip.selected {
+      background: var(--brand-primary-light);
+      border-color: var(--brand-primary);
+      color: var(--brand-primary-dark);
+    }
+    .form-grid {
+      display: grid;
+      gap: 16px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .form-control {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid var(--border-soft);
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: inherit;
+    }
+
+    /* Sticky Mobile Bottom Bar */
     .mobile-sticky-cta {
-      position: fixed; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(8px); border-top: 1px solid var(--border-soft); padding: 10px 14px;
-      display: flex; gap: 8px; justify-content: center; z-index: 900;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid var(--border-soft);
+      padding: 10px 14px;
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      z-index: 900;
     }
   </style>
 </head>
 <body>
+
+  <!-- 最上部キャンペーン帯 -->
   <div class="top-offer-banner">
     <span class="free-tag">初回特典</span>
     初回お困りごと相談 ＋「1案件の解決（またはAI活用体験）」まで完全無料（0円）！
   </div>
 
+  <!-- ヘッダー（屋号：ミライネ） -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="#" class="brand-logo">
@@ -222,6 +949,7 @@
     </div>
   </header>
 
+  <!-- ファーストビュー (Hero) -->
   <section class="hero">
     <div class="container hero-grid">
       <div>
@@ -234,6 +962,7 @@
           ITの<span class="highlight">「困った」</span>解決から、<br />
           仕事と暮らしが劇的にラクになる<span class="highlight">「AI活用」</span>まで。
         </h1>
+
         <div class="free-first-box">
           <div class="free-badge-circle">初回<br/>0円</div>
           <div>
@@ -241,6 +970,7 @@
             <span>PC・スマホのトラブル解決はもちろん、「自分の仕事をAIでラクにする初回体験」も0円でお試しいただけます。</span>
           </div>
         </div>
+
         <p class="hero-lead">
           <strong>『ミライネ』</strong>は、専門用語を一切使わない身近なIT・AIお助け窓口です。愛知県全域での直接対面サポート（推奨）と全国オンラインで、あなたが安心して<strong>「ITやAIで自己解決・ひとり立ち」</strong>できるようになるまで優しく伴走します。
         </p>
@@ -255,6 +985,7 @@
         </div>
       </div>
 
+      <!-- 右側：ミライネの「お助け ➔ AI活用 ➔ ひとり立ち」コンセプト -->
       <div class="hero-visual-card">
         <div class="miraine-concept-box">
           <span style="font-size: 11px; font-weight: 800; color: var(--brand-primary); letter-spacing: 0.06em;">MIRAINE 3 STEPS</span>
@@ -262,20 +993,40 @@
             ITお助け × AI活用で「ひとり立ち」へ
           </h3>
           <div class="miraine-steps">
-            <div class="step-bubble"><div style="font-size: 22px;">🛟</div><strong>1. すぐ助ける</strong><span>初回1案件は<br/>完全無料で解決</span></div>
+            <div class="step-bubble">
+              <div style="font-size: 22px;">🛟</div>
+              <strong>1. すぐ助ける</strong>
+              <span>初回1案件は<br/>完全無料で解決</span>
+            </div>
             <div style="font-weight: 900; color: var(--brand-primary);">➔</div>
-            <div class="step-bubble"><div style="font-size: 22px;">🤖</div><strong>2. AIで便利に</strong><span>文書・事務・企画<br/>をAIでスピード化</span></div>
+            <div class="step-bubble">
+              <div style="font-size: 22px;">🤖</div>
+              <strong>2. AIで便利に</strong>
+              <span>文書・事務・企画<br/>をAIでスピード化</span>
+            </div>
             <div style="font-weight: 900; color: var(--brand-primary);">➔</div>
-            <div class="step-bubble" style="border-color: var(--brand-accent); background: var(--brand-accent-light);"><div style="font-size: 22px;">🌱</div><strong>3. ひとり立ち</strong><span>自分でできる！<br/>が増えて安心</span></div>
+            <div class="step-bubble" style="border-color: var(--brand-accent); background: var(--brand-accent-light);">
+              <div style="font-size: 22px;">🌱</div>
+              <strong>3. ひとり立ち</strong>
+              <span>自分でできる！<br/>が増えて安心</span>
+            </div>
           </div>
           <p style="font-size: 12px; font-weight: 700; color: var(--brand-primary-dark);">
             「難しそうなAI」を、あなたが毎日使える「頼れる相棒」に変えます。
           </p>
         </div>
+
         <div class="hybrid-banner">
-          <div class="hybrid-item"><strong>🚗 対面エリア：愛知県全域</strong><span>名古屋市・三河・尾張など愛知県内どこでも直接お伺いし、隣で一緒に画面を見て解決！</span></div>
-          <div class="hybrid-item"><strong>💻 全国オンライン対応</strong><span>Zoomや画面共有を使い、全国どこからでも4,950円（初回0円）でスピード解決！</span></div>
+          <div class="hybrid-item">
+            <strong>🚗 対面エリア：愛知県全域</strong>
+            <span>名古屋市・三河・尾張など愛知県内どこでも直接お伺いし、隣で一緒に画面を見て解決！</span>
+          </div>
+          <div class="hybrid-item">
+            <strong>💻 全国オンライン対応</strong>
+            <span>Zoomや画面共有を使い、全国どこからでも4,950円（初回0円）でスピード解決！</span>
+          </div>
         </div>
+
         <div class="hours-mini-box">
           <span>🕒 <strong>平日</strong> 18:00〜20:00 ／ <strong>土日</strong> 9:00〜17:00</span>
           <a href="#contact" style="color: var(--brand-primary); font-weight: 800; text-decoration: none;">📅 Googleカレンダー空き確認 ➔</a>
@@ -284,22 +1035,59 @@
     </div>
   </section>
 
+  <!-- ミライネの「やさしいAI活用お助け」具体例セクション -->
   <section id="ai-menu" style="background: #fff; border-bottom: 1px solid var(--border-soft);">
     <div class="container">
       <div class="section-header">
         <span class="section-eyebrow">AI SUPPORT FOR EVERYONE</span>
         <h2 class="section-title">🤖 「AIって難しそう…」を「こんなに便利！」に変えるAI活用支援</h2>
-        <p class="section-desc">ChatGPTや最新AIを、専門知識ゼロで今日から使えるようにマンツーマンで設定・レクチャー＆仕組み化します。<br/><strong>※以下のメニューも「初回1案件解決無料（0円）」でお試しいただけます！</strong></p>
+        <p class="section-desc">
+          ChatGPTや最新AIを、専門知識ゼロで今日から使えるようにマンツーマンで設定・レクチャー＆仕組み化します。<br/>
+          <strong>※以下のメニューも「初回1案件解決無料（0円）」でお試しいただけます！</strong>
+        </p>
       </div>
+
       <div class="ai-showcase-grid">
-        <div class="ai-card"><div class="ai-icon-box">✍️</div><div><span class="ai-time-badge">作業時間 60分 ➔ 3分に短縮！</span><h3>① メール・案内文・SNS・ブログ作成をAIで自動化</h3><p>お客様への丁寧なお礼メール、季節の案内状、InstagramやLINE配信の文章など、あなたの言葉遣いに合わせた「専用AIテンプレート」を一緒に作ります。</p></div></div>
-        <div class="ai-card"><div class="ai-icon-box">📊</div><div><span class="ai-time-badge">毎日のルーティン事務が半減！</span><h3>② 面倒な事務作業・エクセル集計・マニュアル作り</h3><p>「エクセルの計算式がわからない」「録音メモから議事録や報告書を作りたい」「スタッフ向けの手順書を作りたい」といった事務作業をAIで一気に片付けます。</p></div></div>
-        <div class="ai-card"><div class="ai-icon-box">🎨</div><div><span class="ai-time-badge">外注費を大幅カット！</span><h3>③ お店のチラシ企画・キャッチコピー・画像生成</h3><p>新メニューの企画出しや、パッと目を引くチラシ・サムネイル・Webページの構成づくりも、AIを使えばご自身でプロ並みのたたき台が作れるようになります。</p></div></div>
-        <div class="ai-card"><div class="ai-icon-box">📱</div><div><span class="ai-time-badge">個人・シニア・お子様にも大人気！</span><h3>④ スマホで話しかけるだけの「AI生活アシスタント」設定</h3><p>キーボード入力が苦手でも大丈夫！スマホに声で話しかけるだけで、調べもの・献立や旅行の相談・文章の下書きができる安全なAI設定を隣でサポートします。</p></div></div>
+        <div class="ai-card">
+          <div class="ai-icon-box">✍️</div>
+          <div>
+            <span class="ai-time-badge">作業時間 60分 ➔ 3分に短縮！</span>
+            <h3>① メール・案内文・SNS・ブログ作成をAIで自動化</h3>
+            <p>お客様への丁寧なお礼メール、季節の案内状、InstagramやLINE配信の文章など、あなたの言葉遣いに合わせた「専用AIテンプレート」を一緒に作ります。</p>
+          </div>
+        </div>
+
+        <div class="ai-card">
+          <div class="ai-icon-box">📊</div>
+          <div>
+            <span class="ai-time-badge">毎日のルーティン事務が半減！</span>
+            <h3>② 面倒な事務作業・エクセル集計・マニュアル作り</h3>
+            <p>「エクセルの計算式がわからない」「録音メモから議事録や報告書を作りたい」「スタッフ向けの手順書を作りたい」といった事務作業をAIで一気に片付けます。</p>
+          </div>
+        </div>
+
+        <div class="ai-card">
+          <div class="ai-icon-box">🎨</div>
+          <div>
+            <span class="ai-time-badge">外注費を大幅カット！</span>
+            <h3>③ お店のチラシ企画・キャッチコピー・画像生成</h3>
+            <p>新メニューの企画出しや、パッと目を引くチラシ・サムネイル・Webページの構成づくりも、AIを使えばご自身でプロ並みのたたき台が作れるようになります。</p>
+          </div>
+        </div>
+
+        <div class="ai-card">
+          <div class="ai-icon-box">📱</div>
+          <div>
+            <span class="ai-time-badge">個人・シニア・お子様にも大人気！</span>
+            <h3>④ スマホで話しかけるだけの「AI生活アシスタント」設定</h3>
+            <p>キーボード入力が苦手でも大丈夫！スマホに声で話しかけるだけで、調べもの・献立や旅行の相談・文章の下書きができる安全なAI設定を隣でサポートします。</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- ターゲット別お悩み＆解決タブ -->
   <section id="needs">
     <div class="container">
       <div class="section-header">
@@ -307,12 +1095,20 @@
         <h2 class="section-title">お仕事のお悩みも、暮らしのお困りごとも「ミライネ」へ</h2>
         <p class="section-desc">下のボタンをタップして、当てはまるメニューをご覧ください</p>
       </div>
+
       <div class="target-tabs">
-        <button class="target-tab-btn active" onclick="switchTarget('biz', this)">🏢 個人事業主・店舗オーナー様</button>
-        <button class="target-tab-btn" onclick="switchTarget('personal', this)">🏠 個人・ご家庭・シニアの方</button>
+        <button class="target-tab-btn active" onclick="switchTarget('biz', this)">
+          🏢 個人事業主・店舗オーナー様
+        </button>
+        <button class="target-tab-btn" onclick="switchTarget('personal', this)">
+          🏠 個人・ご家庭・シニアの方
+        </button>
       </div>
+
       <div class="target-panel active" id="panel-biz">
-        <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 14px; color: var(--brand-primary-dark);">本業に集中したいのに、こんな「IT・AI・事務の悩み」で時間を奪われていませんか？</h3>
+        <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 14px; color: var(--brand-primary-dark);">
+          本業に集中したいのに、こんな「IT・AI・事務の悩み」で時間を奪われていませんか？
+        </h3>
         <div class="pain-grid">
           <div class="pain-card">「社内にITがわかる人がおらず、PCやネットが不調になると仕事が止まる…」</div>
           <div class="pain-card">「LINE公式やネット予約、顧客管理を整えたいが、どこに頼めばいいかわからない」</div>
@@ -321,14 +1117,23 @@
         </div>
         <div class="solution-banner">
           <h4>💡 初回1案件は0円でお助け！その後も「月額ライト顧問」や「AI自走支援」で安心</h4>
-          <p style="font-size: 13.5px; color: var(--text-sub);">まずは「一番困っているITトラブル」または「AIで効率化したい事務作業1つ」を無料で一緒に解決します。継続をご希望の場合も、月額29,800円（税込）から専属パートナーとして伴走します。</p>
+          <p style="font-size: 13.5px; color: var(--text-sub);">
+            まずは「一番困っているITトラブル」または「AIで効率化したい事務作業1つ」を無料で一緒に解決します。継続をご希望の場合も、月額29,800円（税込）から専属パートナーとして伴走します。
+          </p>
           <div class="service-tags">
-            <span class="service-tag">初回1案件解決無料</span><span class="service-tag">顧問情シス（ライト月29,800円）</span><span class="service-tag">AI業務効率化・プロンプト作成</span><span class="service-tag">予約・顧客管理システム導入</span><span class="service-tag">集客LP・ホームページ制作</span>
+            <span class="service-tag">初回1案件解決無料</span>
+            <span class="service-tag">顧問情シス（ライト月29,800円）</span>
+            <span class="service-tag">AI業務効率化・プロンプト作成</span>
+            <span class="service-tag">予約・顧客管理システム導入</span>
+            <span class="service-tag">集客LP・ホームページ制作</span>
           </div>
         </div>
       </div>
+
       <div class="target-panel" id="panel-personal">
-        <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 14px; color: var(--brand-primary-dark);">「こんな初歩的なこと聞いていいのかな？」という疑問こそ大歓迎です！</h3>
+        <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 14px; color: var(--brand-primary-dark);">
+          「こんな初歩的なこと聞いていいのかな？」という疑問こそ大歓迎です！
+        </h3>
         <div class="pain-grid">
           <div class="pain-card">「新しいパソコンやスマホを買ったけれど、初期設定やデータ移行が不安…」</div>
           <div class="pain-card">「急にWi-Fi（インターネット）やプリンターが繋がらなくなった！」</div>
@@ -337,15 +1142,22 @@
         </div>
         <div class="solution-banner">
           <h4>💡 愛知県全域へ対面訪問！隣で一緒に操作し、ひとり立ちできる「専用メモ」もお渡し</h4>
-          <p style="font-size: 13.5px; color: var(--text-sub);">初回のお困りごと相談＋1案件の解決は無料！2回目以降もオンライン4,950円／対面8,800円（税込）の明朗会計で、ご自身で操作できる「専用メモ」をお作りします。</p>
+          <p style="font-size: 13.5px; color: var(--text-sub);">
+            初回のお困りごと相談＋1案件の解決は無料！2回目以降もオンライン4,950円／対面8,800円（税込）の明朗会計で、ご自身で操作できる「専用メモ」をお作りします。
+          </p>
           <div class="service-tags">
-            <span class="service-tag">初回1案件解決無料</span><span class="service-tag">PC・スマホ初期設定</span><span class="service-tag">Wi-Fi・プリンター接続</span><span class="service-tag">はじめてのAIマンツーマン体験</span><span class="service-tag">親子・キッズIT/AIレッスン</span>
+            <span class="service-tag">初回1案件解決無料</span>
+            <span class="service-tag">PC・スマホ初期設定</span>
+            <span class="service-tag">Wi-Fi・プリンター接続</span>
+            <span class="service-tag">はじめてのAIマンツーマン体験</span>
+            <span class="service-tag">親子・キッズIT/AIレッスン</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- 30秒料金シミュレーター ＆ 料金プラン（すべて税込） -->
   <section id="simulator" style="background: #fff; border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft);">
     <div class="container">
       <div class="section-header">
@@ -353,17 +1165,40 @@
         <h2 class="section-title">明朗会計プラン＆30秒料金シミュレーター</h2>
         <p class="section-desc">※すべて税込表記です。<strong>初回はどの区分でも「相談＋1案件の解決（ITトラブル・AI導入）」が無料（0円）</strong>になります！</p>
       </div>
+
       <div class="sim-card">
         <div class="sim-step-group">
-          <div class="sim-field"><label for="simType">① ご利用回数・区分</label><select id="simType" class="sim-select" onchange="updateSimulator()"><option value="first">🎁 はじめてのご利用（初回特典）</option><option value="biz">🏢 2回目以降：個人事業主・店舗・法人様</option><option value="personal">🏠 2回目以降：個人・ご家庭のお客様</option></select></div>
-          <div class="sim-field"><label for="simStyle">② ご希望のサポート方法</label><select id="simStyle" class="sim-select" onchange="updateSimulator()"><option value="visit">🚗 愛知県全域・対面サポート（推奨）</option><option value="online">💻 全国オンライン（Zoom/遠隔）</option></select></div>
-          <div class="sim-field"><label for="simGoal">③ ご相談したい内容</label><select id="simGoal" class="sim-select" onchange="updateSimulator()"><option value="spot">🔧 単発：IT困りごと解決・AI初期レクチャー</option><option value="monthly">✨ 毎月気軽に相談＋AI事務効率化（ライト顧問）</option><option value="full">🚀 情シス・予約管理・事務まで丸投げ（伴走顧問）</option></select></div>
+          <div class="sim-field">
+            <label for="simType">① ご利用回数・区分</label>
+            <select id="simType" class="sim-select" onchange="updateSimulator()">
+              <option value="first">🎁 はじめてのご利用（初回特典）</option>
+              <option value="biz">🏢 2回目以降：個人事業主・店舗・法人様</option>
+              <option value="personal">🏠 2回目以降：個人・ご家庭のお客様</option>
+            </select>
+          </div>
+          <div class="sim-field">
+            <label for="simStyle">② ご希望のサポート方法</label>
+            <select id="simStyle" class="sim-select" onchange="updateSimulator()">
+              <option value="visit">🚗 愛知県全域・対面サポート（推奨）</option>
+              <option value="online">💻 全国オンライン（Zoom/遠隔）</option>
+            </select>
+          </div>
+          <div class="sim-field">
+            <label for="simGoal">③ ご相談したい内容</label>
+            <select id="simGoal" class="sim-select" onchange="updateSimulator()">
+              <option value="spot">🔧 単発：IT困りごと解決・AI初期レクチャー</option>
+              <option value="monthly">✨ 毎月気軽に相談＋AI事務効率化（ライト顧問）</option>
+              <option value="full">🚀 情シス・予約管理・事務まで丸投げ（伴走顧問）</option>
+            </select>
+          </div>
         </div>
         <div class="sim-result">
           <div>
             <span style="font-size: 12px; font-weight: 700; color: var(--brand-primary);">あなたへのおすすめプラン：</span>
             <div class="sim-plan-name" id="simPlanTitle">【初回特典】お困りごと相談＋1案件解決パック</div>
-            <div style="font-size: 13px; color: var(--text-sub); margin-top: 2px;" id="simPlanDesc">はじめての方は、ITトラブル解決もAI活用レクチャーも「最初の1案件」まで完全無料でお試しいただけます！</div>
+            <div style="font-size: 13px; color: var(--text-sub); margin-top: 2px;" id="simPlanDesc">
+              はじめての方は、ITトラブル解決もAI活用レクチャーも「最初の1案件」まで完全無料でお試しいただけます！
+            </div>
           </div>
           <div style="text-align: right;">
             <div class="sim-price" id="simPlanPrice">0円<small>（税込・初回1案件解決無料）</small></div>
@@ -375,8 +1210,11 @@
       <div class="pricing-grid">
         <div class="price-card">
           <div>
-            <h3>① 単発スポットお助け</h3><p class="price-target">個人・ご家庭 ／ 必要な時だけ頼みたい事業主様</p>
-            <div class="price-amount">4,950円 <span>/ オンライン60分（税込）</span></div>
+            <h3>① 単発スポットお助け</h3>
+            <p class="price-target">個人・ご家庭 ／ 必要な時だけ頼みたい事業主様</p>
+            <div class="price-amount">
+              4,950円 <span>/ オンライン60分（税込）</span>
+            </div>
             <ul class="price-features">
               <li>🎁 <strong>初回相談＋1案件の解決は無料（0円）！</strong></li>
               <li>✔ <strong>全国オンライン：4,950円（税込）</strong> / 60分</li>
@@ -387,11 +1225,15 @@
           </div>
           <a href="#contact" class="btn-sub" style="width: 100%;">まずは初回無料（1案件解決）へ</a>
         </div>
+
         <div class="price-card featured">
           <div class="popular-ribbon">★ 個人事業主・店舗様に人気No.1</div>
           <div>
-            <h3>② まるごとIT＆AI顧問ライト</h3><p class="price-target">1〜5名規模の個人事業主・店舗オーナー様</p>
-            <div class="price-amount">29,800円 <span>/ 月額（税込）</span></div>
+            <h3>② まるごとIT＆AI顧問ライト</h3>
+            <p class="price-target">1〜5名規模の個人事業主・店舗オーナー様</p>
+            <div class="price-amount">
+              29,800円 <span>/ 月額（税込）</span>
+            </div>
             <ul class="price-features">
               <li>🎁 <strong>まずは初回1案件の無料解決でお試しOK！</strong></li>
               <li>✔ <strong>LINE・チャットでのIT/AI相談 回数無制限</strong></li>
@@ -402,10 +1244,14 @@
           </div>
           <a href="#contact" class="btn-main" style="width: 100%;">初回無料相談＆1案件解決を予約</a>
         </div>
+
         <div class="price-card">
           <div>
-            <h3>③ 顧問情シス＆事務伴走プラン</h3><p class="price-target">しっかり任せたい中小企業・成長店舗様</p>
-            <div class="price-amount">59,800円〜 <span>/ 月額（税込）</span></div>
+            <h3>③ 顧問情シス＆事務伴走プラン</h3>
+            <p class="price-target">しっかり任せたい中小企業・成長店舗様</p>
+            <div class="price-amount">
+              59,800円〜 <span>/ 月額（税込）</span>
+            </div>
             <ul class="price-features">
               <li>✔ ライトプランの全内容 ＋ <strong>月4回までの対面/遠隔稼働</strong></li>
               <li>✔ <strong>業務に合わせた専用AIツール・自動化フローの構築</strong></li>
@@ -419,12 +1265,14 @@
     </div>
   </section>
 
+  <!-- プロフィール（AI活用＆ITお助け） ＆ 対応エリア・営業時間セクション -->
   <section id="profile">
     <div class="container">
       <div class="section-header">
         <span class="section-eyebrow">PROFILE & AREA</span>
         <h2 class="section-title">サポーターご紹介・対応エリア・営業時間</h2>
       </div>
+
       <div class="info-split-grid">
         <div class="profile-card">
           <div class="profile-head">
@@ -435,40 +1283,77 @@
               <span style="font-size: 12px; color: var(--text-sub);">ITお助けサポーター ／ AI活用アドバイザー ／ 顧問情シス</span>
             </div>
           </div>
-          <p style="font-size: 14px; color: var(--text-sub); margin-bottom: 10px;">「パソコンやスマホの困りごとを誰に聞けばいいかわからない」「話題のAI（ChatGPTなど）を使って仕事をラクにしたいけれど、何から始めればいいかわからない」——そんな不安を解消し、<strong>『自分でできた！毎日がこんなに便利になった！』</strong>と笑顔になっていただくために『ミライネ』を立ち上げました。</p>
-          <p style="font-size: 14px; color: var(--text-sub); margin-bottom: 14px;">単なるトラブル修理にとどまらず、最新のAIを「あなた専用の頼れる相棒」として使いこなせるよう、専門用語ゼロで隣に座って一緒にサポートします。まずは<strong>「初回相談＋1案件の無料解決（またはAI体験）」</strong>で、気軽にお声がけください！</p>
+          <p style="font-size: 14px; color: var(--text-sub); margin-bottom: 10px;">
+            「パソコンやスマホの困りごとを誰に聞けばいいかわからない」「話題のAI（ChatGPTなど）を使って仕事をラクにしたいけれど、何から始めればいいかわからない」——そんな不安を解消し、<strong>『自分でできた！毎日がこんなに便利になった！』</strong>と笑顔になっていただくために『ミライネ』を立ち上げました。
+          </p>
+          <p style="font-size: 14px; color: var(--text-sub); margin-bottom: 14px;">
+            単なるトラブル修理にとどまらず、最新のAIを「あなた専用の頼れる相棒」として使いこなせるよう、専門用語ゼロで隣に座って一緒にサポートします。まずは<strong>「初回相談＋1案件の無料解決（またはAI体験）」</strong>で、気軽にお声がけください！
+          </p>
           <div class="service-tags">
-            <span class="service-tag">🤖 生成AI業務活用支援</span><span class="service-tag">💻 パソコン・スマホお助け</span><span class="service-tag">🏢 小規模事業者の顧問情シス</span><span class="service-tag">🌱 ひとり立ち・自走レクチャー</span>
+            <span class="service-tag">🤖 生成AI業務活用支援</span>
+            <span class="service-tag">💻 パソコン・スマホお助け</span>
+            <span class="service-tag">🏢 小規模事業者の顧問情シス</span>
+            <span class="service-tag">🌱 ひとり立ち・自走レクチャー</span>
           </div>
         </div>
+
         <div class="schedule-card">
-          <h3 style="font-size: 17px; font-weight: 800; color: var(--brand-primary-dark); margin-bottom: 8px;">📍 対応エリア・受付スケジュール</h3>
+          <h3 style="font-size: 17px; font-weight: 800; color: var(--brand-primary-dark); margin-bottom: 8px;">
+            📍 対応エリア・受付スケジュール
+          </h3>
           <table class="schedule-table">
-            <tr><th>対面サポートエリア</th><td><strong>愛知県全域</strong>（名古屋市・尾張・西三河・東三河・知多エリア全域）</td></tr>
-            <tr><th>オンラインエリア</th><td><strong>日本全国対応</strong>（Zoom・LINE通話・画面共有）</td></tr>
-            <tr><th>平日の対応時間</th><td><strong>18:00 〜 20:00</strong>（お仕事終わり・閉店後も相談OK）</td></tr>
-            <tr><th>土日の対応時間</th><td><strong>9:00 〜 17:00</strong>（休日にじっくり対面サポート可能）</td></tr>
-            <tr><th>初回特典</th><td><strong style="color: var(--brand-accent);">初回お困りごと相談 ＋ 1案件の解決（AI体験含む）無料</strong></td></tr>
+            <tr>
+              <th>対面サポートエリア</th>
+              <td><strong>愛知県全域</strong>（名古屋市・尾張・西三河・東三河・知多エリア全域）</td>
+            </tr>
+            <tr>
+              <th>オンラインエリア</th>
+              <td><strong>日本全国対応</strong>（Zoom・LINE通話・画面共有）</td>
+            </tr>
+            <tr>
+              <th>平日の対応時間</th>
+              <td><strong>18:00 〜 20:00</strong>（お仕事終わり・閉店後も相談OK）</td>
+            </tr>
+            <tr>
+              <th>土日の対応時間</th>
+              <td><strong>9:00 〜 17:00</strong>（休日にじっくり対面サポート可能）</td>
+            </tr>
+            <tr>
+              <th>初回特典</th>
+              <td><strong style="color: var(--brand-accent);">初回お困りごと相談 ＋ 1案件の解決（AI体験含む）無料</strong></td>
+            </tr>
           </table>
-          <p style="font-size: 12.5px; color: var(--text-sub);">※リアルタイムの空き状況は、すぐ下の「Googleカレンダー連動・予約セクション」よりご確認いただけます。</p>
+          <p style="font-size: 12.5px; color: var(--text-sub);">
+            ※リアルタイムの空き状況は、すぐ下の「Googleカレンダー連動・予約セクション」よりご確認いただけます。
+          </p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Step ②：Googleカレンダー空き状況連動 ＆ 公式LINE・メール両対応セクション -->
   <section id="contact" style="background: #fff; border-top: 1px solid var(--border-soft);">
     <div class="container">
       <div class="section-header">
         <span class="section-eyebrow">GOOGLE CALENDAR & 2-WAY BOOKING</span>
         <h2 class="section-title">📅 空き状況カレンダー ＆ 初回無料（1案件解決）お申し込み</h2>
-        <p class="section-desc"><strong>「公式LINE」</strong>または<strong>「Webメールフォーム」</strong>のお好きな方法で、初回0円サポートをご予約いただけます</p>
+        <p class="section-desc">
+          <strong>「公式LINE」</strong>または<strong>「Webメールフォーム」</strong>のお好きな方法で、初回0円サポートをご予約いただけます
+        </p>
       </div>
 
+      <!-- 上段：Googleカレンダー連動枠 ＆ 公式LINE直通カード -->
       <div class="booking-hub-grid">
+        <!-- 左：Googleカレンダー空き状況連動（予約スケジュール埋め込み・直結枠） -->
         <div class="gcal-card">
           <span style="font-size: 11px; font-weight: 800; color: var(--brand-primary);">GOOGLE CALENDAR SYNC</span>
-          <h3 style="font-size: 18px; font-weight: 900; color: var(--brand-primary-dark); margin-top: 2px;">📅 Googleカレンダー 空き状況・即時予約</h3>
-          <p style="font-size: 13px; color: var(--text-sub); margin-top: 4px;">平日 18:00〜20:00 ／ 土日 9:00〜17:00 のリアルタイム空き枠です。</p>
+          <h3 style="font-size: 18px; font-weight: 900; color: var(--brand-primary-dark); margin-top: 2px;">
+            📅 Googleカレンダー 空き状況・即時予約
+          </h3>
+          <p style="font-size: 13px; color: var(--text-sub); margin-top: 4px;">
+            平日 18:00〜20:00 ／ 土日 9:00〜17:00 のリアルタイム空き枠です。
+          </p>
+
           <div class="gcal-week-grid">
             <div class="gcal-day"><strong>月</strong>18-20時<br/><span class="gcal-status-ok">◎ 空き</span></div>
             <div class="gcal-day"><strong>火</strong>18-20時<br/><span class="gcal-status-ok">◎ 空き</span></div>
@@ -478,30 +1363,57 @@
             <div class="gcal-day weekend"><strong>土</strong>9-17時<br/><span class="gcal-status-ok">◎ 空き</span></div>
             <div class="gcal-day weekend"><strong>日</strong>9-17時<br/><span class="gcal-status-ok">◎ 空き</span></div>
           </div>
-          <a href="#" onclick="openGCalModal(event)" class="btn-sub" style="width: 100%;">📆 空き日時を選んで予約する ➔</a>
+
+          <a href="#" id="gcalBookBtn" onclick="openGCalModal(event)" class="btn-sub" style="width: 100%; justify-content: center;">
+            📆 Googleカレンダーで空き日時を選んで予約する ➔
+          </a>
+          <p style="font-size: 11.5px; color: var(--text-muted); margin-top: 8px; text-align: center;">
+            ※選んでいただくと、あなたのGoogleカレンダーに自動で予定が入り通知が届きます
+          </p>
         </div>
 
+        <!-- 右：公式LINE 24時間かんたん受付カード -->
         <div class="line-contact-card">
           <div>
             <span style="font-size: 11px; font-weight: 800; color: #15803d;">LINE OFFICIAL ACCOUNT</span>
-            <h3 style="font-size: 18px; font-weight: 900; color: #14532d; margin-top: 2px;">💬 方法①：公式LINEで気軽に相談・予約</h3>
-            <p style="font-size: 13.5px; color: var(--text-sub); margin-top: 8px; margin-bottom: 12px;">友だち追加して<strong>「初回無料相談希望」</strong>や<strong>「こんなこと頼める？」</strong>とトークで一言送るだけで受付完了です。</p>
+            <h3 style="font-size: 18px; font-weight: 900; color: #14532d; margin-top: 2px;">
+              💬 方法①：公式LINEで気軽に相談・予約
+            </h3>
+            <p style="font-size: 13.5px; color: var(--text-sub); margin-top: 8px; margin-bottom: 12px;">
+              スマホから一番カンタン！友だち追加して<strong>「初回無料相談希望」</strong>や<strong>「こんなこと頼める？」</strong>とトークで一言送るだけで受付完了です。
+            </p>
+            <ul style="list-style: none; font-size: 13px; color: #166534; font-weight: 700; display: grid; gap: 6px; margin-bottom: 16px;">
+              <li>✔ 写真を送って「この画面どうすればいい？」と聞くのもOK！</li>
+              <li>✔ 対面場所や日時のやり取りもLINEトークでラクラク</li>
+            </ul>
           </div>
           <div>
-            <a href="#" onclick="openLineModal(event)" class="btn-line" style="width: 100%;">💬 ミライネ公式LINEを友だち追加する（無料）</a>
+            <a href="#" id="lineOfficialBtn" onclick="openLineModal(event)" class="btn-line" style="width: 100%;">
+              💬 ミライネ公式LINEを友だち追加する（無料）
+            </a>
+            <p style="font-size: 11.5px; color: var(--text-muted); margin-top: 8px; text-align: center;">
+              ※24時間いつでもメッセージ送信OK（しつこい配信は一切ありません）
+            </p>
           </div>
         </div>
       </div>
 
+      <!-- 下段：方法② メールフォーム予約（LINEを使わない方・法人様向け） -->
       <div class="contact-card">
         <div style="margin-bottom: 18px; border-bottom: 1px solid var(--border-soft); padding-bottom: 12px;">
           <span style="font-size: 11px; font-weight: 800; color: var(--brand-primary);">WEB EMAIL FORM</span>
-          <h3 style="font-size: 18px; font-weight: 900; color: var(--brand-primary-dark);">✉️ 方法②：メールフォームで無料相談・1案件解決を申し込む</h3>
+          <h3 style="font-size: 18px; font-weight: 900; color: var(--brand-primary-dark);">
+            ✉️ 方法②：メールフォームで無料相談・1案件解決を申し込む
+          </h3>
+          <p style="font-size: 13px; color: var(--text-sub);">
+            メールでのやり取りをご希望の方・事業者様はこちらのフォームよりお送りください。
+          </p>
         </div>
+
         <form id="miraineEmailForm" class="form-grid" onsubmit="handleEmailFormSubmit(event)">
           <div class="form-group">
             <label>① ご希望の曜日・時間帯枠（平日18:00-20:00 ／ 土日9:00-17:00）</label>
-            <div class="calendar-slots">
+            <div class="calendar-slots" id="slotContainer">
               <div class="slot-chip selected" onclick="selectSlot(this)">平日 18:00〜19:00</div>
               <div class="slot-chip" onclick="selectSlot(this)">平日 19:00〜20:00</div>
               <div class="slot-chip" onclick="selectSlot(this)">土曜 09:00〜12:00</div>
@@ -511,59 +1423,93 @@
             </div>
             <input type="hidden" name="希望時間帯枠" id="selectedSlotInput" value="平日 18:00〜19:00" />
           </div>
+
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;">
-            <div class="form-group"><label>② お名前（または屋号・店舗名） *</label><input type="text" name="お名前" class="form-control" placeholder="例：山田 太郎（〇〇整体院）" required /></div>
-            <div class="form-group"><label>③ メールアドレス（またはお電話番号） *</label><input type="text" name="連絡先" class="form-control" placeholder="例：090-xxxx-xxxx" required /></div>
+            <div class="form-group">
+              <label>② お名前（または屋号・店舗名） *</label>
+              <input type="text" name="お名前" class="form-control" placeholder="例：山田 太郎（〇〇整体院）" required />
+            </div>
+            <div class="form-group">
+              <label>③ メールアドレス（またはお電話番号） *</label>
+              <input type="text" name="連絡先" class="form-control" placeholder="例：info@example.com / 090-xxxx-xxxx" required />
+            </div>
           </div>
+
           <div class="form-group">
-            <label>④ ご希望のサポート形式</label>
+            <label>④ ご希望のサポート形式（お住まいの市町村）</label>
             <select name="サポート形式" class="form-control">
               <option>🚗 愛知県内・対面で直接相談したい（初回1案件解決0円）</option>
               <option>💻 全国オンラインで相談したい（初回1案件解決0円）</option>
               <option>💡 どちらがいいか相談して決めたい</option>
             </select>
           </div>
+
           <div class="form-group">
             <label>⑤ 無料解決したい「1案件」・AI活用やITのお困りごと（ざっくりでOK）</label>
             <textarea name="ご相談内容" class="form-control" rows="3" placeholder="例：AI（ChatGPT）でメールや事務作業をラクにする方法を教えてほしい／パソコンやWi-Fiの設定を隣で一緒に解決してほしい 等"></textarea>
           </div>
-          <button type="submit" class="btn-main" style="width: 100%; font-size: 16.5px;">✉️ メールで初回無料（相談＋1案件解決）を申し込む</button>
-          <p id="formFeedback" style="display:none; text-align:center; font-size:13px; font-weight:700; color:var(--brand-primary); margin-top:8px; background: var(--brand-primary-light); padding: 12px; border-radius: 8px; border: 1px solid var(--brand-primary-border);"></p>
+
+          <button type="submit" class="btn-main" style="width: 100%; font-size: 16.5px;">
+            ✉️ メールで初回無料（相談＋1案件解決）を申し込む
+          </button>
+          <p id="formFeedback" style="display:none; text-align:center; font-size:13px; font-weight:700; color:var(--brand-primary); margin-top:8px; background: var(--brand-primary-light); padding: 12px; border-radius: 8px; border: 1px solid var(--brand-primary-border);">
+            ✅ メールフォーム送信テスト完了！ご指定のメールアドレス＆Googleカレンダー予約リンクを設定すると、本番稼働します。
+          </p>
         </form>
       </div>
     </div>
   </section>
 
+  <!-- スマホ固定フッターCTA（LINE ＆ メール予約の2ボタン並列） -->
   <div class="mobile-sticky-cta">
     <a href="#contact" class="btn-line" style="padding: 10px 14px; font-size: 13px; flex: 1; max-width: 200px;">💬 LINEで無料相談</a>
     <a href="#contact" class="btn-main" style="padding: 10px 14px; font-size: 13px; flex: 1; max-width: 220px;">📅 カレンダー・メール予約</a>
   </div>
 
   <script>
+    // =========================================================================
+    // 【ミライネ 接続設定（Step ②）】
+    // 以下の3つにあなたのURL・メールアドレスを入れるだけで本番接続が完了します！
+    // =========================================================================
     const MIRAINE_CONFIG = {
       googleCalendarBookingUrl: "",
       lineOfficialUrl: "",
+      gasWebAppUrl: "https://script.google.com/macros/s/AKfycbxHM_13wxjBNqu2euPVles4I6Pcbs6QNsW4-uESy-xD8ddfQ0bAEKfapotbTDHuXzQkAw/exec",
       notificationEmail: ["ky073.white", "gmail.com"].join("@")
     };
+
     function switchTarget(target, btnEl) {
       document.querySelectorAll('.target-tab-btn').forEach(b => b.classList.remove('active'));
       btnEl.classList.add('active');
       document.getElementById('panel-biz').classList.toggle('active', target === 'biz');
       document.getElementById('panel-personal').classList.toggle('active', target === 'personal');
     }
+
     function selectSlot(el) {
       document.querySelectorAll('.slot-chip').forEach(c => c.classList.remove('selected'));
       el.classList.add('selected');
       document.getElementById('selectedSlotInput').value = el.textContent;
     }
+
     function openGCalModal(e) {
-      if (MIRAINE_CONFIG.googleCalendarBookingUrl) { window.open(MIRAINE_CONFIG.googleCalendarBookingUrl, '_blank'); }
-      else { e.preventDefault(); document.getElementById('miraineEmailForm').scrollIntoView({ behavior: 'smooth' }); }
+      if (MIRAINE_CONFIG.googleCalendarBookingUrl) {
+        window.open(MIRAINE_CONFIG.googleCalendarBookingUrl, '_blank');
+      } else {
+        e.preventDefault();
+        document.getElementById('miraineEmailForm').scrollIntoView({ behavior: 'smooth' });
+      }
     }
+
     function openLineModal(e) {
-      if (MIRAINE_CONFIG.lineOfficialUrl) { window.open(MIRAINE_CONFIG.lineOfficialUrl, '_blank'); }
-      else { e.preventDefault(); alert('現在、公式LINE窓口を準備中です。すぐ下の「Webメールフォーム」よりお気軽にお申し込みください！'); document.getElementById('miraineEmailForm').scrollIntoView({ behavior: 'smooth' }); }
+      if (MIRAINE_CONFIG.lineOfficialUrl) {
+        window.open(MIRAINE_CONFIG.lineOfficialUrl, '_blank');
+      } else {
+        e.preventDefault();
+        alert('現在、公式LINE窓口を準備中です。すぐ下の「Webメールフォーム」よりお気軽にお申し込みください！');
+        document.getElementById('miraineEmailForm').scrollIntoView({ behavior: 'smooth' });
+      }
     }
+
     function updateSimulator() {
       const type = document.getElementById('simType').value;
       const style = document.getElementById('simStyle').value;
@@ -572,6 +1518,7 @@
       const descEl = document.getElementById('simPlanDesc');
       const priceEl = document.getElementById('simPlanPrice');
       const noteEl = document.getElementById('simSubNote');
+
       if (type === 'first') {
         titleEl.textContent = '【初回特典】お困りごと相談＋1案件解決パック';
         descEl.textContent = 'はじめての方は、ITトラブル解決もAI活用レクチャーも「最初の1案件」まで完全無料でお試しいただけます！';
@@ -579,26 +1526,32 @@
         noteEl.textContent = '※2回目以降は単発オンライン4,950円／対面8,800円、または月額顧問プランをお選びいただけます';
         return;
       }
+
       if (goal === 'spot' || type === 'personal') {
         if (style === 'visit') {
           titleEl.textContent = '単発スポットお助け（愛知県全域・対面サポート）';
           descEl.textContent = '愛知県内どこでも直接お伺いし、隣で一緒にIT解決・AI活用レクチャー＆「復習メモ」をお渡し！';
           priceEl.innerHTML = '8,800円<small> / 60分（税込）</small>';
+          noteEl.textContent = '※初回のご利用時は「相談＋1案件解決」が無料（0円）になります';
         } else {
           titleEl.textContent = '単発スポットお助け（全国オンライン）';
           descEl.textContent = '画面共有・遠隔サポートで、全国どこでもIT解決・AI活用をスピード支援します！';
           priceEl.innerHTML = '4,950円<small> / 60分（税込）</small>';
+          noteEl.textContent = '※初回のご利用時は「相談＋1案件解決」が無料（0円）になります';
         }
       } else if (goal === 'monthly') {
         titleEl.textContent = 'まるごとIT＆AI顧問ライト（★人気No.1）';
         descEl.textContent = 'LINE相談無制限＋月2回の対面/オンライン実作業つき！AI事務効率化とIT管理をまとめてお任せ。';
         priceEl.innerHTML = '29,800円<small> / 月額（税込）</small>';
+        noteEl.textContent = '※まずは初回1案件の無料解決でお試しいただいてからご検討いただけます';
       } else {
         titleEl.textContent = '顧問情シス＆事務伴走プラン';
         descEl.textContent = '月4回稼働＋専用AI自動化・予約/顧客管理・Web更新・日常の事務代行まで丸ごとお任せ！';
         priceEl.innerHTML = '59,800円〜<small> / 月額（税込）</small>';
+        noteEl.textContent = '※まずは初回無料相談にて業務内容をお伺いし、最適なお見積もりをご提示します';
       }
     }
+
     async function handleEmailFormSubmit(e) {
       e.preventDefault();
       const form = e.target;
@@ -608,23 +1561,41 @@
       const contact = formData.get('連絡先') || '';
       const style = formData.get('サポート形式') || '';
       const message = formData.get('ご相談内容') || '';
+
       const feedbackEl = document.getElementById('formFeedback');
       feedbackEl.style.display = 'block';
       feedbackEl.textContent = '⏳ 送信処理中です...';
+
       try {
-        const res = await fetch('https://formsubmit.co/ajax/' + MIRAINE_CONFIG.notificationEmail, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({ _subject: '【ミライネLP】初回無料相談（' + name + '様）', 希望時間帯枠: slot, お名前: name, 連絡先: contact, サポート形式: style, ご相談内容: message })
-        });
-        if (res.ok) {
-          feedbackEl.innerHTML = '✅ <strong>お申し込みを受け付けました！</strong><br/>担当より折り返しご連絡いたします。';
+        if (MIRAINE_CONFIG.gasWebAppUrl) {
+          await fetch(MIRAINE_CONFIG.gasWebAppUrl, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify({
+              希望時間帯枠: slot,
+              お名前: name,
+              連絡先: contact,
+              サポート形式: style,
+              ご相談内容: message
+            })
+          });
+          feedbackEl.innerHTML = '✅ <strong>お申し込みを受け付けました！</strong><br/>Googleスプレッドシート（顧客台帳）への記録と担当へのメール通知が完了しました。24時間以内に折り返しご連絡いたします。';
           form.reset();
           return;
         }
-      } catch (err) {}
+      } catch (err) {
+        // Fallback to mailto if blocked
+      }
+
       const subject = encodeURIComponent('【ミライネ】初回無料相談・1案件解決のお申し込み');
-      const body = encodeURIComponent('■ご希望時間帯枠：' + slot + '\n■お名前：' + name + '\n■ご連絡先：' + contact + '\n■サポート形式：' + style + '\n■ご相談内容：\n' + message);
+      const body = encodeURIComponent(
+        '■ご希望時間帯枠：' + slot + '\n' +
+        '■お名前：' + name + '\n' +
+        '■ご連絡先：' + contact + '\n' +
+        '■サポート形式：' + style + '\n' +
+        '■ご相談内容：\n' + message
+      );
       feedbackEl.innerHTML = '✅ <strong>入力内容を作成しました！</strong><br/><a href="mailto:' + MIRAINE_CONFIG.notificationEmail + '?subject=' + subject + '&body=' + body + '" style="color:var(--brand-primary-dark);text-decoration:underline;">こちらをタップしてメールアプリから送信を完了してください ➔</a>';
     }
   </script>
