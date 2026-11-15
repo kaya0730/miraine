@@ -1475,7 +1475,7 @@
       googleCalendarBookingUrl: "",
       lineOfficialUrl: "",
       gasWebAppUrl: "https://script.google.com/macros/s/AKfycbxHM_13wxjBNqu2euPVles4I6Pcbs6QNsW4-uESy-xD8ddfQ0bAEKfapotbTDHuXzQkAw/exec",
-      notificationEmail: ["ky073.white", "gmail.com"].join("@")
+      notificationEmail: ["miraine.aichi", "gmail.com"].join("@")
     };
 
     function switchTarget(target, btnEl) {
@@ -1567,23 +1567,35 @@
       feedbackEl.textContent = '⏳ 送信処理中です...';
 
       try {
-        if (MIRAINE_CONFIG.gasWebAppUrl) {
-          await fetch(MIRAINE_CONFIG.gasWebAppUrl, {
+        const payload = {
+          _subject: '【ミライネLP】初回無料相談・1案件解決のお申し込み（' + name + '様）',
+          希望時間帯枠: slot,
+          お名前: name,
+          連絡先: contact,
+          サポート形式: style,
+          ご相談内容: message
+        };
+        const tasks = [
+          fetch('https://formsubmit.co/ajax/' + MIRAINE_CONFIG.notificationEmail, {
             method: 'POST',
-            mode: 'no-cors',
-            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-            body: JSON.stringify({
-              希望時間帯枠: slot,
-              お名前: name,
-              連絡先: contact,
-              サポート形式: style,
-              ご相談内容: message
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(payload)
+          })
+        ];
+        if (MIRAINE_CONFIG.gasWebAppUrl) {
+          tasks.push(
+            fetch(MIRAINE_CONFIG.gasWebAppUrl, {
+              method: 'POST',
+              mode: 'no-cors',
+              headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+              body: JSON.stringify(payload)
             })
-          });
-          feedbackEl.innerHTML = '✅ <strong>お申し込みを受け付けました！</strong><br/>Googleスプレッドシート（顧客台帳）への記録と担当へのメール通知が完了しました。24時間以内に折り返しご連絡いたします。';
-          form.reset();
-          return;
+          );
         }
+        await Promise.allSettled(tasks);
+        feedbackEl.innerHTML = '✅ <strong>お申し込みを受け付けました！</strong><br/>担当へ通知メールが送信されました。24時間以内に折り返しご連絡いたします。';
+        form.reset();
+        return;
       } catch (err) {
         // Fallback to mailto if blocked
       }
