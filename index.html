@@ -806,4 +806,1364 @@
       border-radius: var(--radius-lg);
       padding: 26px 22px;
       border: 1px solid var(--border-soft);
-      b
+      box-shadow: var(--shadow-card);
+    }
+    .profile-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .profile-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #0b4f4a, #0f766e);
+      border: 1.5px solid rgba(251, 191, 36, 0.65);
+      box-shadow: 0 4px 14px rgba(15, 118, 110, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fde68a;
+      flex-shrink: 0;
+    }
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 16px;
+      font-size: 13.5px;
+    }
+    .schedule-table th, .schedule-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border-soft);
+      text-align: left;
+    }
+    .schedule-table th {
+      color: var(--brand-primary-dark);
+      font-weight: 800;
+      width: 38%;
+      background: var(--bg-page);
+    }
+
+    /* Step 2 Integration: Google Calendar Monthly View + LINE & Email Dual Contact */
+    .booking-hub-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      max-width: 860px;
+      margin: 0 auto 24px;
+    }
+    .gcal-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 26px 20px;
+      border: 2px solid var(--brand-primary);
+      box-shadow: var(--shadow-card);
+    }
+    .gcal-month-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      background: var(--brand-primary-light);
+      border: 1px solid var(--brand-primary-border);
+      padding: 10px 14px;
+      border-radius: 10px;
+      margin: 14px 0 10px;
+    }
+    .gcal-nav-btn {
+      background: #fff;
+      color: var(--brand-primary-dark);
+      border: 1.5px solid var(--brand-primary-border);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .gcal-nav-btn:hover {
+      background: var(--brand-primary);
+      color: #fff;
+      border-color: var(--brand-primary);
+    }
+    .gcal-month-title {
+      font-size: 17px;
+      font-weight: 900;
+      color: var(--brand-primary-dark);
+      letter-spacing: 0.03em;
+    }
+    .gcal-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      align-items: center;
+      font-size: 11.5px;
+      color: var(--text-sub);
+      margin-bottom: 10px;
+      padding: 6px 10px;
+      background: var(--bg-page);
+      border-radius: 8px;
+      border: 1px solid var(--border-soft);
+    }
+    .gcal-status-ok {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 10px;
+      line-height: 1.3;
+    }
+    .gcal-status-busy {
+      display: inline-block;
+      background: #fee2e2;
+      color: #991b1b;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 10px;
+      line-height: 1.3;
+    }
+    .gcal-status-past {
+      display: inline-block;
+      background: #e2e8f0;
+      color: #64748b;
+      font-weight: 700;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-size: 9.5px;
+      line-height: 1.3;
+    }
+    .gcal-month-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 4px;
+      table-layout: fixed;
+    }
+    .gcal-month-table th {
+      font-size: 12px;
+      font-weight: 800;
+      padding: 7px 2px;
+      text-align: center;
+      background: var(--bg-page);
+      border-radius: 6px;
+      color: var(--brand-primary-dark);
+      border: 1px solid var(--border-soft);
+    }
+    .gcal-month-table th.sun {
+      color: #dc2626;
+      background: #fef2f2;
+      border-color: #fecaca;
+    }
+    .gcal-month-table th.sat {
+      color: #991b1b;
+      background: #fef2f2;
+      border-color: #fecaca;
+    }
+    .gcal-mcell {
+      vertical-align: top;
+      background: #fff;
+      border: 1.5px solid var(--border-soft);
+      border-radius: 8px;
+      padding: 6px 3px;
+      min-height: 64px;
+      height: 68px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.15s;
+      position: relative;
+    }
+    .gcal-mcell.empty-cell {
+      background: transparent;
+      border-color: transparent;
+      cursor: default;
+    }
+    .gcal-mcell:hover:not(.is-busy):not(.is-past):not(.empty-cell) {
+      border-color: var(--brand-primary);
+      background: var(--brand-primary-light);
+      transform: translateY(-1px);
+    }
+    .gcal-mcell.is-selected {
+      border-color: var(--brand-primary);
+      background: var(--brand-primary-light);
+      box-shadow: 0 0 0 2.5px rgba(15, 118, 110, 0.22);
+    }
+    .gcal-mcell.is-busy {
+      background: #fef2f2;
+      border-color: #fecaca;
+      cursor: not-allowed;
+    }
+    .gcal-mcell.is-past {
+      background: #f8fafc;
+      border-color: #e2e8f0;
+      color: #94a3b8;
+      cursor: default;
+      opacity: 0.68;
+    }
+    .gcal-day-num {
+      display: block;
+      font-size: 13px;
+      font-weight: 900;
+      color: var(--text-main);
+      margin-bottom: 3px;
+      line-height: 1.15;
+    }
+    .gcal-mcell.sun-cell .gcal-day-num {
+      color: #dc2626;
+    }
+    .gcal-mcell.is-busy .gcal-day-num {
+      color: #991b1b;
+    }
+    .gcal-mcell.is-past .gcal-day-num {
+      color: #94a3b8;
+    }
+    .gcal-slot-sub {
+      display: block;
+      font-size: 9.5px;
+      font-weight: 700;
+      color: var(--text-sub);
+      margin-top: 2px;
+      line-height: 1.15;
+      word-break: keep-all;
+    }
+    .gcal-mcell.is-busy .gcal-slot-sub {
+      color: #b91c1c;
+    }
+    @media (max-width: 560px) {
+      .gcal-month-table {
+        border-spacing: 2px;
+      }
+      .gcal-mcell {
+        padding: 4px 1px;
+        height: 60px;
+      }
+      .gcal-day-num {
+        font-size: 11.5px;
+      }
+      .gcal-status-ok, .gcal-status-busy, .gcal-status-past {
+        font-size: 8.5px;
+        padding: 1px 3px;
+      }
+      .gcal-slot-sub {
+        font-size: 8px;
+      }
+    }
+    .gcal-embed-wrap {
+      display: none;
+      margin-top: 12px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border-soft);
+      background: #fff;
+    }
+    .gcal-embed-wrap.active {
+      display: block;
+    }
+    .line-contact-card {
+      background: #f0fdf4;
+      border-radius: var(--radius-lg);
+      padding: 26px 22px;
+      border: 2px solid var(--line-green);
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .contact-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 32px 24px;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-card);
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .calendar-slots {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .slot-chip {
+      border: 1.5px solid var(--border-soft);
+      background: var(--bg-page);
+      padding: 9px 10px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.15s;
+    }
+    .slot-chip.selected {
+      background: var(--brand-primary-light);
+      border-color: var(--brand-primary);
+      color: var(--brand-primary-dark);
+    }
+    .slot-chip.disabled-busy {
+      background: #fef2f2;
+      border-color: #fecaca;
+      color: #991b1b;
+      cursor: not-allowed;
+      opacity: 0.85;
+      text-decoration: line-through;
+    }
+    .form-grid {
+      display: grid;
+      gap: 16px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .form-control {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid var(--border-soft);
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: inherit;
+    }
+
+    /* Sticky Mobile Bottom Bar */
+    .mobile-sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid var(--border-soft);
+      padding: 10px 14px;
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      z-index: 900;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 最上部キャンペーン帯 -->
+  <div class="top-offer-banner">
+    <span class="free-tag">初回特典</span>
+    初回お困りごと相談 ＋「1案件の解決（またはAI活用体験）」まで完全無料（0円）！
+  </div>
+
+  <!-- ヘッダー（シンプルロゴ：MIRAINE — 背景をティール×ゴールドの斜めツートン、文字を白に統一） -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand-logo" aria-label="MIRAINE 公式トップ">
+        <svg class="brand-logo-svg" viewBox="0 0 216 50" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MIRAINE">
+          <defs>
+            <!-- 背景1色目（左上側：ディープティール〜エメラルドティール） -->
+            <linearGradient id="miraineBgUpper" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#0B4F4A" />
+              <stop offset="100%" stop-color="#0F766E" />
+            </linearGradient>
+            <!-- 背景2色目（右下側：先ほどの文字色だったサンライトゴールド〜アンバーグラデーション） -->
+            <linearGradient id="miraineBgLowerGold" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#FDE047" />
+              <stop offset="45%" stop-color="#FBBF24" />
+              <stop offset="100%" stop-color="#F59E0B" />
+            </linearGradient>
+            <!-- 白文字がゴールド背景上でもくっきり際立つ控えめなシャドウ -->
+            <filter id="miraineWhiteTextShadow" x="-10%" y="-10%" width="120%" height="120%">
+              <feDropShadow dx="0" dy="1" stdDeviation="1.2" flood-color="#0B4F4A" flood-opacity="0.32" />
+            </filter>
+            <!-- 背景プレート用：左下(1,48)から右上(215,2)へ対角線状に切るクリップパス -->
+            <clipPath id="bgDiagUpperClip">
+              <polygon points="1,2 215,2 1,48" />
+            </clipPath>
+          </defs>
+          <!-- 背景プレート：左下から右上への斜めツートン（右下2色目：ゴールドグラデーション ／ 左上1色目：ティール） -->
+          <rect x="1" y="2" width="214" height="46" rx="12" fill="url(#miraineBgLowerGold)" />
+          <rect x="1" y="2" width="214" height="46" rx="12" fill="url(#miraineBgUpper)" clip-path="url(#bgDiagUpperClip)" />
+          <!-- MIRAINE 文字内：ピュアホワイト（#FFFFFF） -->
+          <text
+            x="108"
+            y="33"
+            textLength="172"
+            lengthAdjust="spacing"
+            text-anchor="middle"
+            font-family="'Montserrat', 'Outfit', 'Plus Jakarta Sans', 'Helvetica Neue', Arial, sans-serif"
+            font-size="25"
+            font-weight="800"
+            fill="#FFFFFF"
+            filter="url(#miraineWhiteTextShadow)"
+          >MIRAINE</text>
+        </svg>
+        <span class="brand-sub">愛知県全域＆全国対応｜IT・AIお助け・社外情シス</span>
+      </a>
+      <div class="header-right">
+        <div class="header-hours">
+          <strong>【対応時間】平日 18:00〜20:00 ／ 日曜 9:00〜17:00</strong><br />
+          <span>※毎月第1・3水木17時〜・土曜終日は予約済（月間カレンダー連動）</span>
+        </div>
+        <a href="#contact" class="header-line-btn">
+          <svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:3px;"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>LINE相談
+        </a>
+        <a href="#contact" class="header-cta">
+          <svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:3px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>無料予約
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ファーストビュー (Hero) -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="support-pills">
+          <span class="pill-primary">
+            <svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>愛知県全域「対面サポート」推奨
+          </span>
+          <span class="pill-outline">
+            <svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>はじめてのAI活用支援
+          </span>
+          <span class="pill-outline">
+            <svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>全国オンライン対応
+          </span>
+        </div>
+        <h1>
+          ITの<span class="highlight">「困った」</span>解決から、<br />
+          仕事と暮らしが劇的にラクになる<span class="highlight">「AI活用」</span>まで。
+        </h1>
+
+        <div class="free-first-box">
+          <div class="free-badge-circle">初回<br/>0円</div>
+          <div>
+            <strong>初回「お困りごと相談 ＋ 1案件の解決」まで完全無料！</strong>
+            <span>PC・スマホのトラブル解決はもちろん、「自分の仕事をAIでラクにする初回体験」も0円でお試しいただけます。</span>
+          </div>
+        </div>
+
+        <p class="hero-lead">
+          <strong>『ミライネ』</strong>は、専門用語を一切使わない身近なIT・AIお助け窓口です。愛知県全域での直接対面サポート（推奨）と全国オンラインで、あなたが安心して<strong>「ITやAIで自己解決・ひとり立ち」</strong>できるようになるまで優しく伴走します。
+        </p>
+        <ul class="hero-points">
+          <li><span class="check-badge">✔</span> 事業主様の「AI事務効率化・情シス」も、ご家庭の「PC・スマホ・AI体験」も両対応</li>
+          <li><span class="check-badge">✔</span> 単発オンライン4,950円 ／ 愛知県内対面8,800円（税込）の明朗会計</li>
+          <li><span class="check-badge">✔</span> 平日夜（18〜20時）・日曜（9〜17時）対応！LINEまたはメールで簡単予約</li>
+        </ul>
+        <div class="cta-box">
+          <a href="#contact" class="btn-line">
+            <svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>公式LINEで気軽に無料相談する
+          </a>
+          <a href="#contact" class="btn-main">
+            <svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>空き状況を見てメール予約する
+          </a>
+        </div>
+      </div>
+
+      <!-- 右側：ミライネの「お助け ➔ AI活用 ➔ ひとり立ち」コンセプト -->
+      <div class="hero-visual-card">
+        <div class="miraine-concept-box">
+          <span style="font-size: 11px; font-weight: 800; color: var(--brand-primary); letter-spacing: 0.08em;">MIRAINE 3 STEPS</span>
+          <h3 style="font-size: 16px; font-weight: 900; color: var(--brand-primary-dark); margin-top: 2px;">
+            ITお助け × AI活用で「ひとり立ち」へ
+          </h3>
+          <div class="miraine-steps">
+            <div class="step-bubble">
+              <div class="step-emblem">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+              </div>
+              <strong>1. すぐ助ける</strong>
+              <span>初回1案件は<br/>完全無料で解決</span>
+            </div>
+            <div style="font-weight: 900; color: var(--brand-primary);">➔</div>
+            <div class="step-bubble">
+              <div class="step-emblem">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+              </div>
+              <strong>2. AIで便利に</strong>
+              <span>文書・事務・企画<br/>をAIでスピード化</span>
+            </div>
+            <div style="font-weight: 900; color: var(--brand-primary);">➔</div>
+            <div class="step-bubble" style="border-color: var(--brand-accent); background: var(--brand-accent-light);">
+              <div class="step-emblem">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              </div>
+              <strong>3. ひとり立ち</strong>
+              <span>自分でできる！<br/>が増えて安心</span>
+            </div>
+          </div>
+          <p style="font-size: 12px; font-weight: 700; color: var(--brand-primary-dark);">
+            「難しそうなAI」を、あなたが毎日使える「頼れる相棒」に変えます。
+          </p>
+        </div>
+
+        <div class="hybrid-banner">
+          <div class="hybrid-item">
+            <strong>
+              <svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="var(--brand-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>対面エリア：愛知県全域
+            </strong>
+            <span>名古屋市・三河・尾張など愛知県内どこでも直接お伺いし、隣で一緒に画面を見て解決！</span>
+          </div>
+          <div class="hybrid-item">
+            <strong>
+              <svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="var(--brand-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>全国オンライン対応
+            </strong>
+            <span>Zoomや画面共有を使い、全国どこからでも4,950円（初回0円）でスピード解決！</span>
+          </div>
+        </div>
+
+        <div class="hours-mini-box">
+          <span>
+            <svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="var(--brand-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><strong>平日</strong> 18:00〜20:00 ／ <strong>日曜</strong> 9:00〜17:00
+          </span>
+          <a href="#contact" style="color: var(--brand-primary); font-weight: 800; text-decoration: none;">月間カレンダー空き確認 ➔</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ミライネの「やさしいAI活用お助け」具体例セクション -->
+  <section id="ai-menu" style="background: #fff; border-bottom: 1px solid var(--border-soft);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">AI SUPPORT FOR EVERYONE</span>
+        <h2 class="section-title">「AIって難しそう…」を「こんなに便利！」に変えるAI活用支援</h2>
+        <p class="section-desc">
+          ChatGPTや最新AIを、専門知識ゼロで今日から使えるようにマンツーマンで設定・レクチャー＆仕組み化します。<br/>
+          <strong>※以下のメニューも「初回1案件解決無料（0円）」でお試しいただけます！</strong>
+        </p>
+      </div>
+
+      <div class="ai-showcase-grid">
+        <div class="ai-card">
+          <div class="ai-icon-box" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+          </div>
+          <div>
+            <span class="ai-time-badge">作業時間 60分 ➔ 3分に短縮！</span>
+            <h3>① メール・案内文・SNS・ブログ作成をAIで自動化</h3>
+            <p>お客様への丁寧なお礼メール、季節の案内状、InstagramやLINE配信の文章など、あなたの言葉遣いに合わせた「専用AIテンプレート」を一緒に作ります。</p>
+          </div>
+        </div>
+
+        <div class="ai-card">
+          <div class="ai-icon-box" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+          </div>
+          <div>
+            <span class="ai-time-badge">毎日のルーティン事務が半減！</span>
+            <h3>② 面倒な事務作業・エクセル集計・マニュアル作り</h3>
+            <p>「エクセルの計算式がわからない」「録音メモから議事録や報告書を作りたい」「スタッフ向けの手順書を作りたい」といった事務作業をAIで一気に片付けます。</p>
+          </div>
+        </div>
+
+        <div class="ai-card">
+          <div class="ai-icon-box" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          </div>
+          <div>
+            <span class="ai-time-badge">外注費を大幅カット！</span>
+            <h3>③ お店のチラシ企画・キャッチコピー・画像生成</h3>
+            <p>新メニューの企画出しや、パッと目を引くチラシ・サムネイル・Webページの構成づくりも、AIを使えばご自身でプロ並みのたたき台が作れるようになります。</p>
+          </div>
+        </div>
+
+        <div class="ai-card">
+          <div class="ai-icon-box" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+          </div>
+          <div>
+            <span class="ai-time-badge">個人・シニア・お子様にも大人気！</span>
+            <h3>④ スマホで話しかけるだけの「AI生活アシスタント」設定</h3>
+            <p>キーボード入力が苦手でも大丈夫！スマホに声で話しかけるだけで、調べもの・献立や旅行の相談・文章の下書きができる安全なAI設定を隣でサポートします。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ターゲット別お悩み＆解決タブ -->
+  <section id="needs">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">FOR BUSINESS & PERSONAL</span>
+        <h2 class="section-title">お仕事のお悩みも、暮らしのお困りごとも「ミライネ」へ</h2>
+        <p class="section-desc">下のボタンをタップして、当てはまるメニューをご覧ください</p>
+      </div>
+
+      <div class="target-tabs">
+        <button class="target-tab-btn active" onclick="switchTarget('biz', this)">
+          <svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>個人事業主・店舗オーナー様
+        </button>
+        <button class="target-tab-btn" onclick="switchTarget('personal', this)">
+          <svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>個人・ご家庭・シニアの方
+        </button>
+      </div>
+
+      <div class="target-panel active" id="panel-biz">
+        <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 14px; color: var(--brand-primary-dark);">
+          本業に集中したいのに、こんな「IT・AI・事務の悩み」で時間を奪われていませんか？
+        </h3>
+        <div class="pain-grid">
+          <div class="pain-card">「社内にITがわかる人がおらず、PCやネットが不調になると仕事が止まる…」</div>
+          <div class="pain-card">「LINE公式やネット予約、顧客管理を整えたいが、どこに頼めばいいかわからない」</div>
+          <div class="pain-card">「AI（ChatGPT等）で事務作業や集客をラクにしたいが、自分の仕事への活かし方がわからない」</div>
+          <div class="pain-card">「高額なコンサルではなく、自分たちでも自走できるよう優しく教えてほしい」</div>
+        </div>
+        <div class="solution-banner">
+          <h4>
+            <svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="var(--brand-primary)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>初回1案件は0円でお助け！その後も「月額ライト顧問」や「AI自走支援」で安心
+          </h4>
+          <p style="font-size: 13.5px; color: var(--text-sub);">
+            まずは「一番困っているITトラブル」または「AIで効率化したい事務作業1つ」を無料で一緒に解決します。継続をご希望の場合も、月額29,800円（税込）から専属パートナーとして伴走します。
+          </p>
+          <div class="service-tags">
+            <span class="service-tag">初回1案件解決無料</span>
+            <span class="service-tag">顧問情シス（ライト月29,800円）</span>
+            <span class="service-tag">AI業務効率化・プロンプト作成</span>
+            <span class="service-tag">予約・顧客管理システム導入</span>
+            <span class="service-tag">集客LP・ホームページ制作</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="target-panel" id="panel-personal">
+        <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 14px; color: var(--brand-primary-dark);">
+          「こんな初歩的なこと聞いていいのかな？」という疑問こそ大歓迎です！
+        </h3>
+        <div class="pain-grid">
+          <div class="pain-card">「新しいパソコンやスマホを買ったけれど、初期設定やデータ移行が不安…」</div>
+          <div class="pain-card">「急にWi-Fi（インターネット）やプリンターが繋がらなくなった！」</div>
+          <div class="pain-card">「話題のAI（ChatGPT等）をスマホやパソコンで安全に楽しく使ってみたい！」</div>
+          <div class="pain-card">「業者にパパッと作業されるだけでなく、次から自分でできるコツも知りたい」</div>
+        </div>
+        <div class="solution-banner">
+          <h4>
+            <svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="var(--brand-primary)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>愛知県全域へ対面訪問！隣で一緒に操作し、ひとり立ちできる「専用メモ」もお渡し
+          </h4>
+          <p style="font-size: 13.5px; color: var(--text-sub);">
+            初回のお困りごと相談＋1案件の解決は無料！2回目以降もオンライン4,950円／対面8,800円（税込）の明朗会計で、ご自身で操作できる「専用メモ」をお作りします。
+          </p>
+          <div class="service-tags">
+            <span class="service-tag">初回1案件解決無料</span>
+            <span class="service-tag">PC・スマホ初期設定</span>
+            <span class="service-tag">Wi-Fi・プリンター接続</span>
+            <span class="service-tag">はじめてのAIマンツーマン体験</span>
+            <span class="service-tag">親子・キッズIT/AIレッスン</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 30秒料金シミュレーター ＆ 料金プラン（すべて税込） -->
+  <section id="simulator" style="background: #fff; border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">PRICE & SIMULATOR</span>
+        <h2 class="section-title">明朗会計プラン＆30秒料金シミュレーター</h2>
+        <p class="section-desc">※すべて税込表記です。<strong>初回はどの区分でも「相談＋1案件の解決（ITトラブル・AI導入）」が無料（0円）</strong>になります！</p>
+      </div>
+
+      <div class="sim-card">
+        <div class="sim-step-group">
+          <div class="sim-field">
+            <label for="simType">① ご利用回数・区分</label>
+            <select id="simType" class="sim-select" onchange="updateSimulator()">
+              <option value="first">■ はじめてのご利用（初回1案件無料特典）</option>
+              <option value="biz">■ 2回目以降：個人事業主・店舗・法人様</option>
+              <option value="personal">■ 2回目以降：個人・ご家庭のお客様</option>
+            </select>
+          </div>
+          <div class="sim-field">
+            <label for="simStyle">② ご希望のサポート方法</label>
+            <select id="simStyle" class="sim-select" onchange="updateSimulator()">
+              <option value="visit">◆ 愛知県全域・対面サポート（推奨）</option>
+              <option value="online">◆ 全国オンライン（Zoom/遠隔）</option>
+            </select>
+          </div>
+          <div class="sim-field">
+            <label for="simGoal">③ ご相談したい内容</label>
+            <select id="simGoal" class="sim-select" onchange="updateSimulator()">
+              <option value="spot">● 単発：IT困りごと解決・AI初期レクチャー</option>
+              <option value="monthly">● 毎月気軽に相談＋AI事務効率化（ライト顧問）</option>
+              <option value="full">● 情シス・予約管理・事務まで丸投げ（伴走顧問）</option>
+            </select>
+          </div>
+        </div>
+        <div class="sim-result">
+          <div>
+            <span style="font-size: 12px; font-weight: 700; color: var(--brand-primary);">あなたへのおすすめプラン：</span>
+            <div class="sim-plan-name" id="simPlanTitle">【初回特典】お困りごと相談＋1案件解決パック</div>
+            <div style="font-size: 13px; color: var(--text-sub); margin-top: 2px;" id="simPlanDesc">
+              はじめての方は、ITトラブル解決もAI活用レクチャーも「最初の1案件」まで完全無料でお試しいただけます！
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <div class="sim-price" id="simPlanPrice">0円<small>（税込・初回1案件解決無料）</small></div>
+            <span style="font-size: 11px; color: var(--text-muted);" id="simSubNote">※2回目以降は単発4,950円〜 または月額プランをお選びいただけます</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div>
+            <h3>① 単発スポットお助け</h3>
+            <p class="price-target">個人・ご家庭 ／ 必要な時だけ頼みたい事業主様</p>
+            <div class="price-amount">
+              4,950円 <span>/ オンライン60分（税込）</span>
+            </div>
+            <ul class="price-features">
+              <li><strong style="color: var(--brand-accent);">★ 初回相談＋1案件の解決は無料（0円）！</strong></li>
+              <li>✔ <strong>全国オンライン：4,950円（税込）</strong> / 60分</li>
+              <li>✔ <strong>愛知県全域・対面：8,800円（税込）</strong> / 60分</li>
+              <li>✔ PC・スマホ設定、Wi-Fi・周辺機器トラブル解決</li>
+              <li>✔ <strong>AI（ChatGPT等）の初期設定＆マンツーマン指導</strong></li>
+            </ul>
+          </div>
+          <a href="#contact" class="btn-sub" style="width: 100%;">まずは初回無料（1案件解決）へ</a>
+        </div>
+
+        <div class="price-card featured">
+          <div class="popular-ribbon">★ 個人事業主・店舗様に人気No.1</div>
+          <div>
+            <h3>② まるごとIT＆AI顧問ライト</h3>
+            <p class="price-target">1〜5名規模の個人事業主・店舗オーナー様</p>
+            <div class="price-amount">
+              29,800円 <span>/ 月額（税込）</span>
+            </div>
+            <ul class="price-features">
+              <li><strong style="color: var(--brand-accent);">★ まずは初回1案件の無料解決でお試しOK！</strong></li>
+              <li>✔ <strong>LINE・チャットでのIT/AI相談 回数無制限</strong></li>
+              <li>✔ <strong>月2回までの対面またはオンライン実作業（各60分）</strong></li>
+              <li>✔ <strong>AIによる文書・メール・事務作業の時短化＆自走支援</strong></li>
+              <li>✔ トラブル時の優先対応・機器選定アドバイス</li>
+            </ul>
+          </div>
+          <a href="#contact" class="btn-main" style="width: 100%;">初回無料相談＆1案件解決を予約</a>
+        </div>
+
+        <div class="price-card">
+          <div>
+            <h3>③ 顧問情シス＆事務伴走プラン</h3>
+            <p class="price-target">しっかり任せたい中小企業・成長店舗様</p>
+            <div class="price-amount">
+              59,800円〜 <span>/ 月額（税込）</span>
+            </div>
+            <ul class="price-features">
+              <li>✔ ライトプランの全内容 ＋ <strong>月4回までの対面/遠隔稼働</strong></li>
+              <li>✔ <strong>業務に合わせた専用AIツール・自動化フローの構築</strong></li>
+              <li>✔ 予約管理・顧客管理・LINE公式・Webの構築＆運用代行</li>
+              <li>✔ スタッフ様向けのIT相談窓口・AI研修を丸ごと担当</li>
+            </ul>
+          </div>
+          <a href="#contact" class="btn-sub" style="width: 100%;">無料相談・見積もりを聞く</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- プロフィール（AI活用＆ITお助け） ＆ 対応エリア・営業時間セクション -->
+  <section id="profile">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">PROFILE & AREA</span>
+        <h2 class="section-title">サポーターご紹介・対応エリア・営業時間</h2>
+      </div>
+
+      <div class="info-split-grid">
+        <div class="profile-card">
+          <div class="profile-head">
+            <div class="profile-avatar" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            </div>
+            <div>
+              <span style="font-size: 11px; font-weight: 800; color: var(--brand-primary); letter-spacing: 0.06em;">MIRAINE REPRESENTATIVE</span>
+              <h3 style="font-size: 18px; font-weight: 900; color: var(--brand-primary-dark);">ミライネ 代表サポーター</h3>
+              <span style="font-size: 12px; color: var(--text-sub);">ITお助けサポーター ／ AI活用アドバイザー ／ 顧問情シス</span>
+            </div>
+          </div>
+          <p style="font-size: 14px; color: var(--text-sub); margin-bottom: 10px;">
+            「パソコンやスマホの困りごとを誰に聞けばいいかわからない」「話題のAI（ChatGPTなど）を使って仕事をラクにしたいけれど、何から始めればいいかわからない」——そんな不安を解消し、<strong>『自分でできた！毎日がこんなに便利になった！』</strong>と実感していただくために『ミライネ』を立ち上げました。
+          </p>
+          <p style="font-size: 14px; color: var(--text-sub); margin-bottom: 14px;">
+            単なるトラブル修理にとどまらず、最新のAIを「あなた専用の頼れる相棒」として使いこなせるよう、専門用語ゼロで隣に座って一緒にサポートします。まずは<strong>「初回相談＋1案件の無料解決（またはAI体験）」</strong>で、気軽にお声がけください！
+          </p>
+          <div class="service-tags">
+            <span class="service-tag">生成AI業務活用支援</span>
+            <span class="service-tag">パソコン・スマホお助け</span>
+            <span class="service-tag">小規模事業者の顧問情シス</span>
+            <span class="service-tag">ひとり立ち・自走レクチャー</span>
+          </div>
+        </div>
+
+        <div class="schedule-card">
+          <h3 style="font-size: 17px; font-weight: 800; color: var(--brand-primary-dark); margin-bottom: 8px;">
+            <svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="var(--brand-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>対応エリア・受付スケジュール
+          </h3>
+          <table class="schedule-table">
+            <tr>
+              <th>対面サポートエリア</th>
+              <td><strong>愛知県全域</strong>（名古屋市・尾張・西三河・東三河・知多エリア全域）</td>
+            </tr>
+            <tr>
+              <th>オンラインエリア</th>
+              <td><strong>日本全国対応</strong>（Zoom・LINE通話・画面共有）</td>
+            </tr>
+            <tr>
+              <th>平日の対応時間</th>
+              <td><strong>18:00 〜 20:00</strong>（※毎月第1・第3 水曜・木曜 17:00〜は予約済）</td>
+            </tr>
+            <tr>
+              <th>土日の対応時間</th>
+              <td><strong>日曜 9:00 〜 17:00</strong>（※土曜は終日予約済）</td>
+            </tr>
+            <tr>
+              <th>初回特典</th>
+              <td><strong style="color: var(--brand-accent);">初回お困りごと相談 ＋ 1案件の解決（AI体験含む）無料</strong></td>
+            </tr>
+          </table>
+          <p style="font-size: 12.5px; color: var(--text-sub);">
+            ※リアルタイムの空き状況は、すぐ下の「Googleカレンダー（miraine.aichi）連動・予約セクション」よりご確認いただけます。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step ②：Googleカレンダー空き状況連動 ＆ 公式LINE・メール両対応セクション -->
+  <section id="contact" style="background: #fff; border-top: 1px solid var(--border-soft);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">GOOGLE CALENDAR & 2-WAY BOOKING</span>
+        <h2 class="section-title">空き状況カレンダー ＆ 初回無料（1案件解決）お申し込み</h2>
+        <p class="section-desc">
+          <strong>「公式LINE」</strong>または<strong>「Webメールフォーム」</strong>のお好きな方法で、初回0円サポートをご予約いただけます
+        </p>
+      </div>
+
+      <!-- 上段：月間カレンダー連動枠 ＆ 公式LINE直通カード -->
+      <div class="booking-hub-grid">
+        <!-- 月間カレンダー空き状況連動（miraine.aichi アカウント参照・自動判定） -->
+        <div class="gcal-card">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;">
+            <div>
+              <span style="font-size: 11px; font-weight: 800; color: var(--brand-primary);">MONTHLY CALENDAR SYNC (miraine.aichi)</span>
+              <h3 style="font-size: 19px; font-weight: 900; color: var(--brand-primary-dark); margin-top: 2px;">
+                <svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="var(--brand-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>月間カレンダー 空き状況・日時選択
+              </h3>
+            </div>
+            <span style="font-size: 11px; font-weight: 700; color: var(--brand-primary-dark); background: var(--brand-primary-light); padding: 4px 10px; border-radius: 999px; border: 1px solid var(--brand-primary-border);" id="gcalSyncStatus">
+              ● miraine.aichi カレンダー連動中
+            </span>
+          </div>
+
+          <p style="font-size: 12.5px; color: var(--text-sub); margin-top: 6px;">
+            ご希望の<strong>「◎ 空き」の日付をタップ</strong>すると、下の予約フォームに希望日時が自動セットされます。<br/>
+            <span style="color: #991b1b; font-weight: 800;">※毎月 第1・第3 水曜・木曜 17:00〜 および 毎週土曜 終日は「× 予約済」となります。</span>
+          </p>
+
+          <!-- 月間カレンダー切替ツールバー -->
+          <div class="gcal-month-toolbar">
+            <button type="button" class="gcal-nav-btn" onclick="changeMiraineMonth(-1)">◀ 前月</button>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span class="gcal-month-title" id="gcalMonthTitle">2026年 11月</span>
+              <button type="button" class="gcal-nav-btn" style="padding: 3px 8px; font-size: 11px;" onclick="changeMiraineMonth(0)">今月</button>
+            </div>
+            <button type="button" class="gcal-nav-btn" onclick="changeMiraineMonth(1)">翌月 ▶</button>
+          </div>
+
+          <!-- 凡例 -->
+          <div class="gcal-legend">
+            <span><span class="gcal-status-ok">◎ 空き</span> タップで予約日時を選択（平日18-20時／日曜9-17時）</span>
+            <span><span class="gcal-status-busy">× 予約済</span> 第1・3水木17時〜 ／ 土曜終日 ／ 他予定</span>
+            <span><span class="gcal-status-past">－ 終了</span> 受付終了</span>
+          </div>
+
+          <!-- 7列の月間カレンダーテーブル（日〜土） -->
+          <table class="gcal-month-table" aria-label="ミライネ 予約状況 月間カレンダー">
+            <thead>
+              <tr>
+                <th class="sun">日</th>
+                <th>月</th>
+                <th>火</th>
+                <th>水</th>
+                <th>木</th>
+                <th>金</th>
+                <th class="sat">土</th>
+              </tr>
+            </thead>
+            <tbody id="gcalMonthBody"></tbody>
+          </table>
+
+          <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px;">
+            <a href="#" id="gcalBookBtn" onclick="openGCalModal(event)" class="btn-sub" style="flex: 1; justify-content: center; font-size: 12.5px; padding: 9px 12px;">
+              <svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Googleカレンダー（miraine.aichi）埋め込み表示を開閉
+            </a>
+            <a href="#" id="gcalNewTabBtn" target="_blank" rel="noopener" class="btn-sub" style="justify-content: center; font-size: 12.5px; padding: 9px 12px;">
+              Googleカレンダーを別タブで開く ↗
+            </a>
+          </div>
+
+          <!-- miraine.aichi Googleカレンダー埋め込みフレーム（月間表示 mode=MONTH） -->
+          <div class="gcal-embed-wrap" id="gcalEmbedWrap">
+            <iframe id="gcalIframe" style="border: 0; width: 100%; height: 380px;" frameborder="0" scrolling="no" title="ミライネ Googleカレンダー（月間表示）"></iframe>
+          </div>
+        </div>
+
+        <!-- 公式LINE 24時間かんたん受付カード -->
+        <div class="line-contact-card">
+          <div>
+            <span style="font-size: 11px; font-weight: 800; color: #15803d;">LINE OFFICIAL ACCOUNT</span>
+            <h3 style="font-size: 18px; font-weight: 900; color: #14532d; margin-top: 2px;">
+              <svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="#15803d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>方法①：公式LINEで気軽に相談・予約
+            </h3>
+            <p style="font-size: 13.5px; color: var(--text-sub); margin-top: 8px; margin-bottom: 12px;">
+              スマホから一番カンタン！友だち追加して<strong>「初回無料相談希望」</strong>や<strong>「こんなこと頼める？」</strong>とトークで一言送るだけで受付完了です。
+            </p>
+            <ul style="list-style: none; font-size: 13px; color: #166534; font-weight: 700; display: grid; gap: 6px; margin-bottom: 16px;">
+              <li>✔ 写真を送って「この画面どうすればいい？」と聞くのもOK！</li>
+              <li>✔ 対面場所や日時のやり取りもLINEトークでラクラク</li>
+            </ul>
+          </div>
+          <div>
+            <a href="#" id="lineOfficialBtn" onclick="openLineModal(event)" class="btn-line" style="width: 100%;">
+              <svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>ミライネ公式LINEを友だち追加する（無料）
+            </a>
+            <p style="font-size: 11.5px; color: var(--text-muted); margin-top: 8px; text-align: center;">
+              ※24時間いつでもメッセージ送信OK（しつこい配信は一切ありません）
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 下段：方法② メールフォーム予約（LINEを使わない方・法人様向け） -->
+      <div class="contact-card">
+        <div style="margin-bottom: 18px; border-bottom: 1px solid var(--border-soft); padding-bottom: 12px;">
+          <span style="font-size: 11px; font-weight: 800; color: var(--brand-primary);">WEB EMAIL FORM</span>
+          <h3 style="font-size: 18px; font-weight: 900; color: var(--brand-primary-dark);">
+            <svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="var(--brand-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>方法②：メールフォームで無料相談・1案件解決を申し込む
+          </h3>
+          <p style="font-size: 13px; color: var(--text-sub);">
+            上の月間カレンダーから「◎ 空き」の日付をタップするか、下の希望時間帯枠を選んでお送りください。
+          </p>
+        </div>
+
+        <form id="miraineEmailForm" class="form-grid" onsubmit="handleEmailFormSubmit(event)">
+          <div class="form-group">
+            <label>① ご希望の日時・曜日枠（※毎月第1・3水木17時〜・土曜終日は予約済）</label>
+            <div class="calendar-slots" id="slotContainer">
+              <div class="slot-chip selected" onclick="selectSlot(this)">平日（月・火・金）18:00〜20:00</div>
+              <div class="slot-chip" onclick="selectSlot(this)">水・木（第2・4週）18:00〜20:00</div>
+              <div class="slot-chip disabled-busy" title="毎月第1・第3水曜・木曜17時〜は予約済みです">水・木（第1・3週17時〜）×予約済</div>
+              <div class="slot-chip disabled-busy" title="土曜日は終日予約済みです">土曜（終日）×予約済</div>
+              <div class="slot-chip" onclick="selectSlot(this)">日曜 09:00〜12:00</div>
+              <div class="slot-chip" onclick="selectSlot(this)">日曜 13:00〜17:00</div>
+            </div>
+            <div id="selectedDatePreview" style="margin-top: 8px; font-size: 13px; font-weight: 800; color: var(--brand-primary-dark); background: var(--brand-primary-light); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--brand-primary-border);">
+              ■ 選択中のご希望枠：<span id="selectedSlotLabel">平日（月・火・金）18:00〜20:00</span>
+            </div>
+            <input type="hidden" name="希望時間帯枠" id="selectedSlotInput" value="平日（月・火・金）18:00〜20:00" />
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;">
+            <div class="form-group">
+              <label>② お名前（または屋号・店舗名） *</label>
+              <input type="text" name="お名前" class="form-control" placeholder="例：山田 太郎（〇〇整体院）" required />
+            </div>
+            <div class="form-group">
+              <label>③ メールアドレス（またはお電話番号） *</label>
+              <input type="text" name="連絡先" class="form-control" placeholder="例：info@example.com / 090-xxxx-xxxx" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>④ ご希望のサポート形式（お住まいの市町村）</label>
+            <select name="サポート形式" class="form-control">
+              <option>■ 愛知県内・対面で直接相談したい（初回1案件解決0円）</option>
+              <option>■ 全国オンラインで相談したい（初回1案件解決0円）</option>
+              <option>■ どちらがいいか相談して決めたい</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>⑤ 無料解決したい「1案件」・AI活用やITのお困りごと（ざっくりでOK）</label>
+            <textarea name="ご相談内容" class="form-control" rows="3" placeholder="例：AI（ChatGPT）でメールや事務作業をラクにする方法を教えてほしい／パソコンやWi-Fiの設定を隣で一緒に解決してほしい 等"></textarea>
+          </div>
+
+          <button type="submit" class="btn-main" style="width: 100%; font-size: 16.5px;">
+            <svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>メールで初回無料（相談＋1案件解決）を申し込む
+          </button>
+          <p id="formFeedback" style="display:none; text-align:center; font-size:13px; font-weight:700; color:var(--brand-primary); margin-top:8px; background: var(--brand-primary-light); padding: 12px; border-radius: 8px; border: 1px solid var(--brand-primary-border);">
+            ✔ メールフォーム送信テスト完了！ご指定のメールアドレス＆Googleカレンダー予約リンクを設定すると、本番稼働します。
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- スマホ固定フッターCTA（LINE ＆ メール予約の2ボタン並列） -->
+  <div class="mobile-sticky-cta">
+    <a href="#contact" class="btn-line" style="padding: 10px 12px; font-size: 12.5px; flex: 1; max-width: 195px; white-space: nowrap;">
+      <svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>LINEで無料相談
+    </a>
+    <a href="#contact" class="btn-main" style="padding: 10px 12px; font-size: 12.5px; flex: 1; max-width: 215px; white-space: nowrap;">
+      <svg class="ico-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>空き確認・メール予約
+    </a>
+  </div>
+
+  <script>
+    // =========================================================================
+    // 【ミライネ 接続設定（Step ②）】
+    // miraine.aichi アカウントのGoogleカレンダー参照＆月間カレンダー定期予約済ルール
+    // =========================================================================
+    const MIRAINE_ACCOUNT_EMAIL = ["miraine.aichi", "gmail.com"].join("@");
+    const MIRAINE_CONFIG = {
+      googleCalendarId: MIRAINE_ACCOUNT_EMAIL,
+      googleCalendarEmbedUrl:
+        "https://calendar.google.com/calendar/embed?src=" +
+        encodeURIComponent(MIRAINE_ACCOUNT_EMAIL) +
+        "&ctz=Asia%2FTokyo&mode=MONTH&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=1&showCalendars=0&showTz=0",
+      googleCalendarBookingUrl: "",
+      lineOfficialUrl: "",
+      gasWebAppUrl: "https://script.google.com/macros/s/AKfycbxHM_13wxjBNqu2euPVles4I6Pcbs6QNsW4-uESy-xD8ddfQ0bAEKfapotbTDHuXzQkAw/exec",
+      notificationEmail: MIRAINE_ACCOUNT_EMAIL
+    };
+
+    let currentCalYear = new Date().getFullYear();
+    let currentCalMonth = new Date().getMonth(); // 0-indexed (0=1月)
+    let syncedExtraBusyDates = [];
+    let selectedIsoDateStr = "";
+
+    // 定期予約済み判定ルール：
+    // 1. 毎週土曜日（dayOfWeek === 6）➔ 終日予約済
+    // 2. 毎月 第1・第3 水曜日（dayOfWeek === 3）・木曜日（dayOfWeek === 4）の17:00〜 ➔ 予約済
+    function checkMiraineBusyRule(dateObj, extraBusyDates) {
+      const dayOfWeek = dateObj.getDay(); // 0:日, 1:月, 2:火, 3:水, 4:木, 5:金, 6:土
+      const dayOfMonth = dateObj.getDate();
+      const nthWeekday = Math.ceil(dayOfMonth / 7); // 第何〇曜日か（1〜5）
+      const yyyy = dateObj.getFullYear();
+      const mm = String(dateObj.getMonth() + 1).padStart(2, '0');
+      const dd = String(dayOfMonth).padStart(2, '0');
+      const isoDate = `${yyyy}-${mm}-${dd}`;
+
+      if (dayOfWeek === 6) {
+        return {
+          isBusy: true,
+          badgeText: "× 予約済",
+          subText: "土曜終日",
+          detail: "土曜終日予約済"
+        };
+      }
+      if ((dayOfWeek === 3 || dayOfWeek === 4) && (nthWeekday === 1 || nthWeekday === 3)) {
+        const wLabel = dayOfWeek === 3 ? '水' : '木';
+        return {
+          isBusy: true,
+          badgeText: "× 予約済",
+          subText: `第${nthWeekday}${wLabel} 17時〜`,
+          detail: "第1・3水木17時〜予約済"
+        };
+      }
+      if (extraBusyDates && extraBusyDates.includes(isoDate)) {
+        return {
+          isBusy: true,
+          badgeText: "× 予約済",
+          subText: "予定あり",
+          detail: "カレンダー予約済"
+        };
+      }
+      if (dayOfWeek === 0) {
+        return {
+          isBusy: false,
+          badgeText: "◎ 空き",
+          subText: "9:00-17:00",
+          slotText: "09:00〜17:00"
+        };
+      }
+      return {
+        isBusy: false,
+        badgeText: "◎ 空き",
+        subText: "18:00-20:00",
+        slotText: "18:00〜20:00"
+      };
+    }
+
+    function changeMiraineMonth(offset) {
+      if (offset === 0) {
+        const now = new Date();
+        currentCalYear = now.getFullYear();
+        currentCalMonth = now.getMonth();
+      } else {
+        currentCalMonth += offset;
+        if (currentCalMonth < 0) {
+          currentCalMonth = 11;
+          currentCalYear -= 1;
+        } else if (currentCalMonth > 11) {
+          currentCalMonth = 0;
+          currentCalYear += 1;
+        }
+      }
+      renderMiraineMonthlyCalendar();
+    }
+
+    function renderMiraineMonthlyCalendar() {
+      const tbody = document.getElementById('gcalMonthBody');
+      const titleEl = document.getElementById('gcalMonthTitle');
+      if (!tbody || !titleEl) return;
+
+      titleEl.textContent = `${currentCalYear}年 ${currentCalMonth + 1}月`;
+      tbody.innerHTML = '';
+
+      const weekNames = ['日', '月', '火', '水', '木', '金', '土'];
+      const now = new Date();
+      const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+      const firstDayOfWeek = new Date(currentCalYear, currentCalMonth, 1).getDay();
+      const daysInMonth = new Date(currentCalYear, currentCalMonth + 1, 0).getDate();
+
+      let currentDay = 1;
+      const totalCells = Math.ceil((firstDayOfWeek + daysInMonth) / 7) * 7;
+      const totalRows = totalCells / 7;
+
+      for (let r = 0; r < totalRows; r++) {
+        const tr = document.createElement('tr');
+        for (let c = 0; c < 7; c++) {
+          const cellIndex = r * 7 + c;
+          const td = document.createElement('td');
+
+          if (cellIndex < firstDayOfWeek || currentDay > daysInMonth) {
+            td.className = 'gcal-mcell empty-cell';
+            tr.appendChild(td);
+            continue;
+          }
+
+          const d = new Date(currentCalYear, currentCalMonth, currentDay);
+          const dayNum = currentDay;
+          currentDay++;
+
+          const yyyy = d.getFullYear();
+          const mm = String(d.getMonth() + 1).padStart(2, '0');
+          const dd = String(dayNum).padStart(2, '0');
+          const isoDate = `${yyyy}-${mm}-${dd}`;
+          const wName = weekNames[d.getDay()];
+          const isPast = d < todayStart;
+          const isToday = d.getTime() === todayStart.getTime();
+          const status = checkMiraineBusyRule(d, syncedExtraBusyDates);
+
+          let cellClasses = 'gcal-mcell';
+          if (d.getDay() === 0) cellClasses += ' sun-cell';
+          if (isPast) {
+            cellClasses += ' is-past';
+          } else if (status.isBusy) {
+            cellClasses += ' is-busy';
+          } else if (selectedIsoDateStr === isoDate) {
+            cellClasses += ' is-selected';
+          }
+          td.className = cellClasses;
+
+          const todayBadge = isToday ? `<span style="font-size:9px;background:var(--brand-primary);color:#fff;padding:1px 4px;border-radius:3px;margin-left:2px;">今日</span>` : '';
+
+          if (isPast) {
+            td.innerHTML =
+              `<span class="gcal-day-num">${dayNum}</span>` +
+              `<span class="gcal-status-past">－ 終了</span>`;
+          } else if (status.isBusy) {
+            td.innerHTML =
+              `<span class="gcal-day-num">${dayNum}${todayBadge}</span>` +
+              `<span class="gcal-status-busy">${status.badgeText}</span>` +
+              `<span class="gcal-slot-sub">${status.subText}</span>`;
+            td.title = `${currentCalMonth + 1}/${dayNum}(${wName}) は予約済み（${status.subText}）のため選択できません`;
+          } else {
+            const fullSlotValue = `${currentCalYear}年${currentCalMonth + 1}月${dayNum}日(${wName}) ${status.slotText}`;
+            td.innerHTML =
+              `<span class="gcal-day-num">${dayNum}${todayBadge}</span>` +
+              `<span class="gcal-status-ok">${status.badgeText}</span>` +
+              `<span class="gcal-slot-sub">${status.subText}</span>`;
+            td.onclick = function () {
+              selectedIsoDateStr = isoDate;
+              document.querySelectorAll('.slot-chip').forEach(ch => ch.classList.remove('selected'));
+              renderMiraineMonthlyCalendar();
+              document.getElementById('selectedSlotInput').value = fullSlotValue;
+              document.getElementById('selectedSlotLabel').textContent = fullSlotValue;
+              document.getElementById('miraineEmailForm').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            };
+          }
+
+          tr.appendChild(td);
+        }
+        tbody.appendChild(tr);
+      }
+    }
+
+    async function syncGoogleCalendarStatus() {
+      const iframe = document.getElementById('gcalIframe');
+      const newTabBtn = document.getElementById('gcalNewTabBtn');
+      if (iframe) iframe.src = MIRAINE_CONFIG.googleCalendarEmbedUrl;
+      if (newTabBtn) newTabBtn.href = MIRAINE_CONFIG.googleCalendarEmbedUrl;
+
+      renderMiraineMonthlyCalendar();
+
+      if (MIRAINE_CONFIG.gasWebAppUrl) {
+        try {
+          const res = await fetch(MIRAINE_CONFIG.gasWebAppUrl + "?action=calendar&account=" + encodeURIComponent(MIRAINE_CONFIG.googleCalendarId));
+          if (res.ok) {
+            const data = await res.json();
+            if (data && Array.isArray(data.busyDates)) {
+              syncedExtraBusyDates = data.busyDates;
+              renderMiraineMonthlyCalendar();
+              const st = document.getElementById('gcalSyncStatus');
+              if (st) st.textContent = "● miraine.aichi カレンダー同期済";
+            }
+          }
+        } catch (_) {
+          // 定期予約済みルール（毎月第1・3水木17時〜／土曜終日）は常時自動反映
+        }
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', syncGoogleCalendarStatus);
+
+    function switchTarget(target, btnEl) {
+      document.querySelectorAll('.target-tab-btn').forEach(b => b.classList.remove('active'));
+      btnEl.classList.add('active');
+      document.getElementById('panel-biz').classList.toggle('active', target === 'biz');
+      document.getElementById('panel-personal').classList.toggle('active', target === 'personal');
+    }
+
+    function selectSlot(el) {
+      if (el.classList.contains('disabled-busy')) return;
+      selectedIsoDateStr = "";
+      document.querySelectorAll('.slot-chip').forEach(c => c.classList.remove('selected'));
+      renderMiraineMonthlyCalendar();
+      el.classList.add('selected');
+      document.getElementById('selectedSlotInput').value = el.textContent;
+      const lbl = document.getElementById('selectedSlotLabel');
+      if (lbl) lbl.textContent = el.textContent;
+    }
+
+    function openGCalModal(e) {
+      e.preventDefault();
+      if (MIRAINE_CONFIG.googleCalendarBookingUrl) {
+        window.open(MIRAINE_CONFIG.googleCalendarBookingUrl, '_blank');
+        return;
+      }
+      const wrap = document.getElementById('gcalEmbedWrap');
+      if (wrap) {
+        wrap.classList.toggle('active');
+      }
+    }
+
+    function openLineModal(e) {
+      if (MIRAINE_CONFIG.lineOfficialUrl) {
+        window.open(MIRAINE_CONFIG.lineOfficialUrl, '_blank');
+      } else {
+        e.preventDefault();
+        alert('現在、公式LINE窓口を準備中です。すぐ下の「Webメールフォーム」よりお気軽にお申し込みください！');
+        document.getElementById('miraineEmailForm').scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function updateSimulator() {
+      const type = document.getElementById('simType').value;
+      const style = document.getElementById('simStyle').value;
+      const goal = document.getElementById('simGoal').value;
+      const titleEl = document.getElementById('simPlanTitle');
+      const descEl = document.getElementById('simPlanDesc');
+      const priceEl = document.getElementById('simPlanPrice');
+      const noteEl = document.getElementById('simSubNote');
+
+      if (type === 'first') {
+        titleEl.textContent = '【初回特典】お困りごと相談＋1案件解決パック';
+        descEl.textContent = 'はじめての方は、ITトラブル解決もAI活用レクチャーも「最初の1案件」まで完全無料でお試しいただけます！';
+        priceEl.innerHTML = '0円<small>（税込・初回1案件解決無料）</small>';
+        noteEl.textContent = '※2回目以降は単発オンライン4,950円／対面8,800円、または月額顧問プランをお選びいただけます';
+        return;
+      }
+
+      if (goal === 'spot' || type === 'personal') {
+        if (style === 'visit') {
+          titleEl.textContent = '単発スポットお助け（愛知県全域・対面サポート）';
+          descEl.textContent = '愛知県内どこでも直接お伺いし、隣で一緒にIT解決・AI活用レクチャー＆「復習メモ」をお渡し！';
+          priceEl.innerHTML = '8,800円<small> / 60分（税込）</small>';
+          noteEl.textContent = '※初回のご利用時は「相談＋1案件解決」が無料（0円）になります';
+        } else {
+          titleEl.textContent = '単発スポットお助け（全国オンライン）';
+          descEl.textContent = '画面共有・遠隔サポートで、全国どこでもIT解決・AI活用をスピード支援します！';
+          priceEl.innerHTML = '4,950円<small> / 60分（税込）</small>';
+          noteEl.textContent = '※初回のご利用時は「相談＋1案件解決」が無料（0円）になります';
+        }
+      } else if (goal === 'monthly') {
+        titleEl.textContent = 'まるごとIT＆AI顧問ライト（★人気No.1）';
+        descEl.textContent = 'LINE相談無制限＋月2回の対面/オンライン実作業つき！AI事務効率化とIT管理をまとめてお任せ。';
+        priceEl.innerHTML = '29,800円<small> / 月額（税込）</small>';
+        noteEl.textContent = '※まずは初回1案件の無料解決でお試しいただいてからご検討いただけます';
+      } else {
+        titleEl.textContent = '顧問情シス＆事務伴走プラン';
+        descEl.textContent = '月4回稼働＋専用AI自動化・予約/顧客管理・Web更新・日常の事務代行まで丸ごとお任せ！';
+        priceEl.innerHTML = '59,800円〜<small> / 月額（税込）</small>';
+        noteEl.textContent = '※まずは初回無料相談にて業務内容をお伺いし、最適なお見積もりをご提示します';
+      }
+    }
+
+    async function handleEmailFormSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const formData = new FormData(form);
+      const slot = formData.get('希望時間帯枠') || '';
+      const name = formData.get('お名前') || '';
+      const contact = formData.get('連絡先') || '';
+      const style = formData.get('サポート形式') || '';
+      const message = formData.get('ご相談内容') || '';
+
+      const feedbackEl = document.getElementById('formFeedback');
+      feedbackEl.style.display = 'block';
+      feedbackEl.textContent = '⏳ 送信処理中です...';
+
+      try {
+        const payload = {
+          _subject: '【ミライネLP】初回無料相談・1案件解決のお申し込み（' + name + '様）',
+          希望時間帯枠: slot,
+          お名前: name,
+          連絡先: contact,
+          サポート形式: style,
+          ご相談内容: message
+        };
+        const tasks = [
+          fetch('https://formsubmit.co/ajax/' + MIRAINE_CONFIG.notificationEmail, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(payload)
+          })
+        ];
+        if (MIRAINE_CONFIG.gasWebAppUrl) {
+          tasks.push(
+            fetch(MIRAINE_CONFIG.gasWebAppUrl, {
+              method: 'POST',
+              mode: 'no-cors',
+              headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+              body: JSON.stringify(payload)
+            })
+          );
+        }
+        await Promise.allSettled(tasks);
+        feedbackEl.innerHTML = '✅ <strong>お申し込みを受け付けました！</strong><br/>担当へ通知メールが送信されました。24時間以内に折り返しご連絡いたします。';
+        form.reset();
+        return;
+      } catch (err) {
+        // Fallback to mailto if blocked
+      }
+
+      const subject = encodeURIComponent('【ミライネ】初回無料相談・1案件解決のお申し込み');
+      const body = encodeURIComponent(
+        '■ご希望時間帯枠：' + slot + '\n' +
+        '■お名前：' + name + '\n' +
+        '■ご連絡先：' + contact + '\n' +
+        '■サポート形式：' + style + '\n' +
+        '■ご相談内容：\n' + message
+      );
+      feedbackEl.innerHTML = '✅ <strong>入力内容を作成しました！</strong><br/><a href="mailto:' + MIRAINE_CONFIG.notificationEmail + '?subject=' + subject + '&body=' + body + '" style="color:var(--brand-primary-dark);text-decoration:underline;">こちらをタップしてメールアプリから送信を完了してください ➔</a>';
+    }
+  </script>
+</body>
+</html>
