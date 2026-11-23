@@ -5,6 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MIRAINE（ミライネ）｜愛知県全域の対面サポート＆全国オンライン｜ITお助け・AI活用支援・顧問情シス</title>
   <meta name="description" content="ミライネ（MIRAINE）は愛知県全域での対面サポート＆全国オンライン対応のIT・AIお助け窓口です。初回お困りごと相談＋1案件の解決（またはAI活用体験）まで完全無料！Googleカレンダー空き状況確認、公式LINE・メールフォームから24時間予約受付中。" />
+  <meta name="theme-color" content="#0f766e" />
+
+  <!-- ファビコン（外部アセット不要のインラインSVG：ティール地 × ゴールドの「M」） -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f766e'/%3E%3Ctext x='32' y='45' font-size='40' font-family='Arial,Helvetica,sans-serif' font-weight='800' text-anchor='middle' fill='%23fde047'%3EM%3C/text%3E%3C/svg%3E" />
+
+  <!-- OGP / SNSシェア最適化（※本番ドメイン確定後、og:url と og:image のURLをご記入ください） -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="MIRAINE（ミライネ）" />
+  <meta property="og:title" content="MIRAINE（ミライネ）｜愛知県全域の対面サポート＆全国オンライン｜IT・AI活用お助け窓口" />
+  <meta property="og:description" content="初回お困りごと相談＋1案件の解決（またはAI活用体験）まで完全無料。愛知県全域の対面サポート＆全国オンライン対応。公式LINE・メールフォームから24時間予約受付中。" />
+  <meta property="og:locale" content="ja_JP" />
+  <!-- <meta property="og:url" content="https://（本番ドメイン）/" /> -->
+  <!-- <meta property="og:image" content="https://（本番ドメイン）/ogp.png" /> -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MIRAINE（ミライネ）｜愛知県全域＆全国オンラインのIT・AIお助け窓口" />
+  <meta name="twitter:description" content="初回相談＋1案件の解決まで完全無料。専門用語ゼロで、ITの困りごと解決からAI活用・ひとり立ちまで優しく伴走します。" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Outfit:wght@700;800&display=swap" rel="stylesheet" />
@@ -44,6 +61,51 @@
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
       padding-bottom: 84px;
+    }
+
+    /* ===== 本番ブラッシュアップ：スクロール挙動・アクセシビリティ・タイポ微調整 ===== */
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 78px; /* 固定ヘッダーにアンカー先が隠れないように */
+      -webkit-text-size-adjust: 100%;
+    }
+    img, svg, iframe, video {
+      max-width: 100%;
+    }
+    ::selection {
+      background: var(--brand-primary-border);
+      color: var(--brand-primary-dark);
+    }
+    /* キーボード操作時の見やすいフォーカスリング（マウス操作時は従来通り） */
+    a:focus-visible,
+    button:focus-visible,
+    select:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible,
+    [tabindex]:focus-visible {
+      outline: 3px solid var(--brand-accent);
+      outline-offset: 2px;
+      border-radius: 6px;
+    }
+    /* ヘッダーなどへ乗せている英字ラベルを、読み込み済みのMontserratで上質に */
+    .section-eyebrow {
+      font-family: "Montserrat", "Outfit", sans-serif;
+    }
+    /* 見出しの改行バランスを整え、収まりの良い折り返しに */
+    .hero h1,
+    .section-title {
+      text-wrap: balance;
+    }
+    /* 動きを抑えたいユーザー設定を尊重 */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
     }
 
     .container {
@@ -811,21 +873,28 @@
     .profile-head {
       display: flex;
       align-items: center;
-      gap: 14px;
-      margin-bottom: 14px;
+      gap: 16px;
+      margin-bottom: 16px;
     }
     .profile-avatar {
-      width: 60px;
-      height: 60px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, #0b4f4a, #0f766e);
-      border: 1.5px solid rgba(251, 191, 36, 0.65);
-      box-shadow: 0 4px 14px rgba(15, 118, 110, 0.2);
+      width: 92px;
+      height: 92px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #e6f4f1, #f8fafc);
+      border: 2.5px solid var(--brand-primary);
+      box-shadow: 0 0 0 2px rgba(251, 191, 36, 0.55), 0 8px 20px rgba(15, 118, 110, 0.18);
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fde68a;
       flex-shrink: 0;
+    }
+    .profile-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
     }
     .schedule-table {
       width: 100%;
@@ -1231,19 +1300,19 @@
         </div>
         <h1>
           ITの<span class="highlight">「困った」</span>解決から、<br />
-          仕事と暮らしが劇的にラクになる<span class="highlight">「AI活用」</span>まで。
+          仕事も暮らしも、ぐっとラクになる<span class="highlight">「AI活用」</span>まで。
         </h1>
 
         <div class="free-first-box">
           <div class="free-badge-circle">初回<br/>0円</div>
           <div>
             <strong>初回「お困りごと相談 ＋ 1案件の解決」まで完全無料！</strong>
-            <span>PC・スマホのトラブル解決はもちろん、「自分の仕事をAIでラクにする初回体験」も0円でお試しいただけます。</span>
+            <span>PC・スマホのトラブル解決はもちろん、「あなたの仕事をAIでラクにする初回体験」まで、まるごと0円でお試しいただけます。</span>
           </div>
         </div>
 
         <p class="hero-lead">
-          <strong>『ミライネ』</strong>は、専門用語を一切使わない身近なIT・AIお助け窓口です。愛知県全域での直接対面サポート（推奨）と全国オンラインで、あなたが安心して<strong>「ITやAIで自己解決・ひとり立ち」</strong>できるようになるまで優しく伴走します。
+          <strong>『ミライネ』</strong>は、専門用語を使わず“となりで一緒に”解決する、あなたのIT・AIお助け窓口。愛知県全域の対面サポート（推奨）と全国オンラインで、<strong>「ITもAIも、自分でできる」</strong>という安心が手に入るまで、あせらず優しく伴走します。
         </p>
         <ul class="hero-points">
           <li><span class="check-badge">✔</span> 事業主様の「AI事務効率化・情シス」も、ご家庭の「PC・スマホ・AI体験」も両対応</li>
@@ -1265,35 +1334,35 @@
         <div class="miraine-concept-box">
           <span style="font-size: 11px; font-weight: 800; color: var(--brand-primary); letter-spacing: 0.08em;">MIRAINE 3 STEPS</span>
           <h3 style="font-size: 16px; font-weight: 900; color: var(--brand-primary-dark); margin-top: 2px;">
-            ITお助け × AI活用で「ひとり立ち」へ
+            「わからない」を「できた！」に変える3ステップ
           </h3>
           <div class="miraine-steps">
             <div class="step-bubble">
               <div class="step-emblem">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>
               </div>
-              <strong>1. すぐ助ける</strong>
-              <span>初回1案件は<br/>完全無料で解決</span>
+              <strong>1. とにかくお助け</strong>
+              <span>初回1案件は<br/>まるごと0円</span>
             </div>
             <div style="font-weight: 900; color: var(--brand-primary);">➔</div>
             <div class="step-bubble">
               <div class="step-emblem">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 9l1.25-2.75L23 5l-2.75-1.25L19 1l-1.25 2.75L15 5l2.75 1.25L19 9zm-7.5.5L9 4 6.5 9.5 1 12l5.5 2.5L9 20l2.5-5.5L17 12l-5.5-2.5zM19 15l-1.25 2.75L15 19l2.75 1.25L19 23l1.25-2.75L23 19l-2.75-1.25L19 15z"/></svg>
               </div>
-              <strong>2. AIで便利に</strong>
-              <span>文書・事務・企画<br/>をAIでスピード化</span>
+              <strong>2. AIで楽ちんに</strong>
+              <span>文章・事務・企画<br/>をスピードUP</span>
             </div>
             <div style="font-weight: 900; color: var(--brand-primary);">➔</div>
             <div class="step-bubble" style="border-color: var(--brand-accent); background: var(--brand-accent-light);">
               <div class="step-emblem">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-1.91l-.01-.01L23 10z"/></svg>
               </div>
-              <strong>3. ひとり立ち</strong>
-              <span>自分でできる！<br/>が増えて安心</span>
+              <strong>3. ひとりで安心</strong>
+              <span>自分でできる<br/>ことが増える</span>
             </div>
           </div>
           <p style="font-size: 12px; font-weight: 700; color: var(--brand-primary-dark);">
-            「難しそうなAI」を、あなたが毎日使える「頼れる相棒」に変えます。
+            「難しそうな」はもう卒業。あなたの毎日に、AIをやさしく。
           </p>
         </div>
 
@@ -1329,7 +1398,7 @@
         <span class="section-eyebrow">AI SUPPORT FOR EVERYONE</span>
         <h2 class="section-title">「AIって難しそう…」を「こんなに便利！」に変えるAI活用支援</h2>
         <p class="section-desc">
-          ChatGPTや最新AIを、専門知識ゼロで今日から使えるようにマンツーマンで設定・レクチャー＆仕組み化します。<br/>
+          ChatGPTなどの最新AIを、専門知識ゼロのあなたが“今日から”使いこなせるよう、マンツーマンで設定・レクチャー。毎日の仕事に根づく「仕組み」まで一緒に作ります。<br/>
           <strong>※以下のメニューも「初回1案件解決無料（0円）」でお試しいただけます！</strong>
         </p>
       </div>
@@ -1388,7 +1457,7 @@
       <div class="section-header">
         <span class="section-eyebrow">FOR BUSINESS & PERSONAL</span>
         <h2 class="section-title">お仕事のお悩みも、暮らしのお困りごとも「ミライネ」へ</h2>
-        <p class="section-desc">下のボタンをタップして、当てはまるメニューをご覧ください</p>
+        <p class="section-desc">下のボタンから、あなたに当てはまる方をタップ。よくあるお悩みと解決策をまとめてご覧いただけます。</p>
       </div>
 
       <div class="target-tabs">
@@ -1575,8 +1644,8 @@
       <div class="info-split-grid">
         <div class="profile-card">
           <div class="profile-head">
-            <div class="profile-avatar" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            <div class="profile-avatar">
+              <img src="data:image/jpeg;base64,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" alt="ミライネ 代表サポーター プロフィール写真" width="92" height="92" loading="lazy" />
             </div>
             <div>
               <span style="font-size: 11px; font-weight: 800; color: var(--brand-primary); letter-spacing: 0.06em;">MIRAINE REPRESENTATIVE</span>
